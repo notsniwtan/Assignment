@@ -67,7 +67,6 @@ public class Main {
 			System.out.println(sd.getFieldValue("id"));
 			System.out.println(sd.getFieldValue("content"));
 		}
-		
 	}
 	
 	public static JSONArray parseJSONFile(){
@@ -116,8 +115,6 @@ public class Main {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
- 		
-        
 	}
 	
 	public static void createIndex(){

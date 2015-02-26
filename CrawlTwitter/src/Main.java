@@ -89,6 +89,7 @@ public class Main {
 				for (Status tweet : tweets) {
 					//place the tweets as json object
 					document = new JSONObject();
+					//retrieve and save the tweet: content, author, 
 					document.put("Content",tweet.getText());
 					documentList.add(document);
 					count++;
