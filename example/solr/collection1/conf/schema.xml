@@ -123,8 +123,11 @@
         NOTE: This field is not indexed by default, since it is also copied to "text"
         using copyField below. This is to save space. Use this field for returning and
         highlighting document content. Use the "text" field to search the content. -->
-   <field name="content" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   
+   <field name="content" type="text_en" indexed="true" stored="true" multiValued="true"/>
+   <field name="author" type="string" indexed="true" stored="true"/>
+   <field name="date" type="date" indexed="true" stored="true"/>
+   <field name="favcount" type="long" indexed="true" stored="true" />
+   <field name="hashtag" type="text_hashtag" indexed="true" stored="true" multiValued="true"/>
 
    <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
@@ -386,6 +389,22 @@
       </analyzer>
     </fieldType>
 
+	<!-- For hashtags -->
+	<fieldType name="text_hashtag" class="solr.TextField" positionIncrementGap="100">
+		<analyzer>
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory"
+			splitOnCaseChange="1"
+			splitOnNumerics="0"
+			stemEnglishPossessive="0"
+			generateWordParts="1"
+			generateNumberParts="1"
+			preserveOriginal="1"
+			/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	
     <!-- A general text field that has reasonable, generic
          cross-language defaults: it tokenizes with StandardTokenizer,
 	 removes stop words from case-insensitive "stopwords.txt"

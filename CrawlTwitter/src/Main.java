@@ -2,14 +2,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import twitter4j.*;
-import twitter4j.conf.ConfigurationBuilder;
 
-import org.json.simple.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,8 +23,8 @@ public class Main {
 		Twitter twitter = AuthSetup.setup();
 		
 		//crawl tweets in twitter that contains the word
-	//	crawl(twitter,"European Union");
-		print();
+		crawl(twitter,"European Union");
+		//print();
 	}
 	
 	public static void print(){
@@ -46,7 +44,19 @@ public class Main {
             Iterator<JSONObject> iterator = documentList.iterator();
             while(iterator.hasNext()){
             	JSONObject innerObj = (JSONObject) iterator.next();
+            	System.out.println("ID: " + innerObj.get("Id"));
             	System.out.println("Content: " + innerObj.get("Content"));
+            	System.out.println("Author: " + innerObj.get("Author"));
+            	System.out.println("Date: " + innerObj.get("Date"));
+            	System.out.println("Fav Counts: " + innerObj.get("Fav Counts"));
+            	
+            	JSONArray ja = (JSONArray)innerObj.get("Hashtags");
+            	if(ja != null){
+	            	for(Object o:ja){
+	            		String s= (String)o;
+	            		System.out.println(s);
+	            	}
+            	}
             }
             
         }  catch (ParseException e) {
@@ -89,11 +99,29 @@ public class Main {
 				for (Status tweet : tweets) {
 					//place the tweets as json object
 					document = new JSONObject();
-					//retrieve and save the tweet: content, author, 
+					//retrieve and save the tweet: Id, content, author, date and fav counts
+					System.out.println("==========================");
+					document.put("Id",tweet.getId());
+					System.out.println("ID: "+tweet.getId());
+					document.put("Author",tweet.getUser().getScreenName());
+					System.out.println("Author: "+tweet.getUser().getScreenName());
+					document.put("Date",parseDate((Date)tweet.getCreatedAt()));
 					document.put("Content",tweet.getText());
+					System.out.println("Content: "+tweet.getText());
+					document.put("Fav Counts",tweet.getFavoriteCount());
+					System.out.println("Fav Count: "+tweet.getFavoriteCount());
+					JSONArray jArray = new JSONArray();					
+					for(HashtagEntity hte : tweet.getHashtagEntities()){
+						jArray.add(hte.getText());
+						System.out.println("Hashtag: " + hte.getText());
+					}
+					document.put("Hashtags", jArray);
+					
+					System.out.println("==========================");
 					documentList.add(document);
 					count++;
 				}
+				
 				//while query still has results or number of tweets retrieved has not been hit
 			} while ((query = result.nextQuery()) != null && count != MAX_NUM_TWEETS);
 				corpus.put("Documents", documentList);
@@ -111,5 +139,34 @@ public class Main {
 				System.out.println("IO Exception");
 				e.printStackTrace();
 			}
+	}
+	
+	public static String parseDate(Date d){
+		//date into solr format
+		StringBuilder dateBuilder = new StringBuilder();
+		dateBuilder.append(d.getYear()+1900);
+		dateBuilder.append("-");
+		if(Integer.toString(d.getMonth()).length() == 1){
+			dateBuilder.append("0"+d.getMonth());
+		}
+		else{
+			dateBuilder.append(d.getMonth());
+		}
+		dateBuilder.append("-");
+		if(Integer.toString(d.getDay()).length() == 1){
+			dateBuilder.append("0"+d.getDay());
+		}
+		else{
+			dateBuilder.append(d.getDay());
+		}
+		dateBuilder.append("T");
+		dateBuilder.append(d.getHours());
+		dateBuilder.append(":");
+		dateBuilder.append(d.getMinutes());
+		dateBuilder.append(":");
+		dateBuilder.append(d.getSeconds());
+		dateBuilder.append("Z");
+		String date = dateBuilder.toString();
+		return date;
 	}
 }

@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -48,16 +50,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.apache.solr.common.util.*;
 
 
 public class Main {
 	static SolrServer server = null;
 	//static IndexWriter indexWriter = null;
-	public static void main(String[] args) throws SolrServerException, IOException{
-		//createIndex();
+	public static void main(String[] args) throws SolrServerException, IOException, java.text.ParseException{
+		createIndex();
 		
 		//search based on query
-		setUpServer("http://localhost:8983/solr/");
+		/*setUpServer("http://localhost:8983/solr/");
 		SolrQuery query = new SolrQuery();
 		query.set("q", "union");
 		query.set("qt", "/select");
@@ -66,7 +69,7 @@ public class Main {
 		for(SolrDocument sd:list){
 			System.out.println(sd.getFieldValue("id"));
 			System.out.println(sd.getFieldValue("content"));
-		}
+		}*/
 	}
 	
 	public static JSONArray parseJSONFile(){
@@ -97,27 +100,51 @@ public class Main {
 		server = new HttpSolrServer(url);
 	}
 	
-	public static void addDocuments(JSONArray documentList){
+	public static void addDocuments(JSONArray documentList) throws java.text.ParseException{
 		System.out.println("Adding Documents");
 		Iterator<JSONObject> iterator = documentList.iterator();
-		int count = 0;
 		try {
 			while(iterator.hasNext()){
 				JSONObject innerObj = (JSONObject) iterator.next();
-				String content = (String) innerObj.get("Content");
+
+            	System.out.println("ID: " + innerObj.get("Id"));
+            	System.out.println("Content: " + innerObj.get("Content"));
+            	System.out.println("Author: " + innerObj.get("Author"));
+            	System.out.println("Date: " + innerObj.get("Date"));
+            	System.out.println("Fav Counts: " + innerObj.get("Fav Counts"));
+            	
+            	List hashList = new ArrayList();
+            	JSONArray ja = (JSONArray)innerObj.get("Hashtags");
+            	if(ja!=null){
+            		for(Object o:ja){
+	            		String s= (String)o;
+	            		hashList.add(s);
+	            		System.out.println(s);
+	            	}
+            	}
+            	
+            	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            	Date date = sf.parse((String)innerObj.get("Date"));
+            	
 				SolrInputDocument doc = new SolrInputDocument();
-				doc.addField("id", count++);
-				doc.addField("content", content);
+				doc.addField("id", String.valueOf(innerObj.get("Id")));
+				doc.addField("content", (String) innerObj.get("Content"));
+				doc.addField("author", (String)innerObj.get("author"));
+				doc.addField("date", date);
+				doc.addField("hashtag", hashList);
+				doc.addField("favcount", (long)innerObj.get("Fav Counts"));
+
 				server.add(doc);
 			}
 		    server.commit();
+		    System.out.println("Documents indexed.");
 			} catch (SolrServerException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
 	
-	public static void createIndex(){
+	public static void createIndex() throws java.text.ParseException{
 		JSONArray documentList = parseJSONFile();
 		setUpServer("http://localhost:8983/solr/");
 		addDocuments(documentList);
