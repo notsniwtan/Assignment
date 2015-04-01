@@ -793,6 +793,17 @@
        of SearchComponents (see below) and supports distributed
        queries across multiple shards
     -->
+  <requestHandler name="/hashtag" class="solr.SearchHandler">
+	 <lst name="defaults">
+       <str name="echoParams">explicit</str>
+       <int name="rows">100</int>
+	   <str name="df">hashtag</str>
+     </lst>
+	 <lst name="appends">
+		<str name="fq">hasImage:true</str>
+	 </lst>
+  </requestHandler>
+	
   <requestHandler name="/select" class="solr.SearchHandler">
     <!-- default values for query parameters can be specified, these
          will be overridden by parameters in the request

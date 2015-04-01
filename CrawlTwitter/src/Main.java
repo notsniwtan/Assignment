@@ -23,8 +23,8 @@ public class Main {
 		Twitter twitter = AuthSetup.setup();
 		
 		//crawl tweets in twitter that contains the word
-		//crawl(twitter,"European Union");
-		print();
+		crawl(twitter,"European Union");
+		//print();
 	}
 	
 	public static void print(){

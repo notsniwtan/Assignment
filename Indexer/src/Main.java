@@ -133,7 +133,10 @@ public class Main {
 					doc.addField("geolong", (double)innerObj.get("Geolong"));
 					doc.addField("geolang", (double)innerObj.get("Geolang"));
 				}
-				doc.addField("image", (String) innerObj.get("Photo"));
+				if(innerObj.get("Photo") != null){
+					doc.addField("image", (String) innerObj.get("Photo"));
+					doc.addField("hasImage","true");
+				}
 				doc.addField("url", (String) innerObj.get("URL"));
 
 
