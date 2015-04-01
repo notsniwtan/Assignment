@@ -106,12 +106,6 @@ public class Main {
 		try {
 			while(iterator.hasNext()){
 				JSONObject innerObj = (JSONObject) iterator.next();
-
-            	System.out.println("ID: " + innerObj.get("Id"));
-            	System.out.println("Content: " + innerObj.get("Content"));
-            	System.out.println("Author: " + innerObj.get("Author"));
-            	System.out.println("Date: " + innerObj.get("Date"));
-            	System.out.println("Fav Counts: " + innerObj.get("Fav Counts"));
             	
             	List hashList = new ArrayList();
             	JSONArray ja = (JSONArray)innerObj.get("Hashtags");
@@ -119,7 +113,6 @@ public class Main {
             		for(Object o:ja){
 	            		String s= (String)o;
 	            		hashList.add(s);
-	            		System.out.println(s);
 	            	}
             	}
             	
@@ -129,10 +122,19 @@ public class Main {
 				SolrInputDocument doc = new SolrInputDocument();
 				doc.addField("id", String.valueOf(innerObj.get("Id")));
 				doc.addField("content", (String) innerObj.get("Content"));
-				doc.addField("author", (String)innerObj.get("author"));
+				doc.addField("author", (String)innerObj.get("Author"));
+				doc.addField("authorProfilePic", (String)innerObj.get("User Profile Pic"));
 				doc.addField("date", date);
-				doc.addField("hashtag", hashList);
 				doc.addField("favcount", (long)innerObj.get("Fav Counts"));
+				doc.addField("retweetcount", (long)innerObj.get("Retweet Counts"));
+				doc.addField("hashtag", hashList);
+				doc.addField("country", (String)innerObj.get("Country"));
+				if(innerObj.get("Geolong") != null){
+					doc.addField("geolong", (double)innerObj.get("Geolong"));
+					doc.addField("geolang", (double)innerObj.get("Geolang"));
+				}
+				doc.addField("image", (String) innerObj.get("Photo"));
+
 
 				server.add(doc);
 			}

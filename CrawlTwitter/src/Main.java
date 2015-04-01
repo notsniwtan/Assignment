@@ -14,7 +14,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Main {
-	public final static int MAX_NUM_TWEETS = 10000;
+	public final static int MAX_NUM_TWEETS = 12000;
 	public final static String OUTPUT_FILE = "results/corpus.txt";
 	
 	public static void main(String args[]) throws TwitterException{
@@ -99,17 +99,30 @@ public class Main {
 				for (Status tweet : tweets) {
 					//place the tweets as json object
 					document = new JSONObject();
-					//retrieve and save the tweet: Id, content, author, date and fav counts
+					
+					//if tweet is a RT, skip as it could be a a duplicate
+					if(tweet.isRetweet()){
+						continue;
+					}
+					
 					System.out.println("==========================");
+					//tweet id
 					document.put("Id",tweet.getId());
 					System.out.println("ID: "+tweet.getId());
+					//tweet author name
 					document.put("Author",tweet.getUser().getScreenName());
 					System.out.println("Author: "+tweet.getUser().getScreenName());
+					//tweet created date
 					document.put("Date",parseDate((Date)tweet.getCreatedAt()));
-					document.put("Content",tweet.getText());
-					System.out.println("Content: "+tweet.getText());
+					System.out.println("Date: "+tweet.getCreatedAt());
+					
+					//tweet fav count
 					document.put("Fav Counts",tweet.getFavoriteCount());
 					System.out.println("Fav Count: "+tweet.getFavoriteCount());
+					//tweet retweet count
+					document.put("Retweet Counts",tweet.getRetweetCount());
+					System.out.println("Retweet Count: "+tweet.getRetweetCount());
+					//tweet hashtag
 					JSONArray jArray = new JSONArray();					
 					for(HashtagEntity hte : tweet.getHashtagEntities()){
 						jArray.add(hte.getText());
@@ -117,9 +130,49 @@ public class Main {
 					}
 					document.put("Hashtags", jArray);
 					
+	
+					for(MediaEntity me:tweet.getMediaEntities()){
+						if(me.getType().equals("photo")){
+							//tweet photo
+							document.put("Photo", me.getURL());
+							System.out.println("Photo: "+me.getURL());
+						}
+					}
+					
+					//tweet user profile pic
+					document.put("User Profile Pic",tweet.getUser().getProfileImageURL());;
+					System.out.println("Profile URL: "+tweet.getUser().getProfileImageURL());
+					
+					
+					for(URLEntity ue:tweet.getURLEntities()){
+						if(tweet.getText().contains((CharSequence) ue.getText())){
+							//tweet content
+							document.put("Content",tweet.getText().replace((CharSequence) ue.getText(), ""));
+							System.out.println("Content: "+tweet.getText().replace((CharSequence) ue.getText(), ""));
+							//tweet url
+							document.put("URL", ue.getText());
+							System.out.println("URL: "+ue.getText());
+						}
+						else{
+							document.put("Content", tweet.getText());
+							System.out.println("Content: "+tweet.getText());
+						}
+					}
+					
+					if(tweet.getPlace()!=null){
+						//tweet country name
+						document.put("Country", tweet.getPlace().getCountry());
+						System.out.println("Country: "+tweet.getPlace().getCountry());
+						//tweet geolocation
+						document.put("Geolang", tweet.getGeoLocation().getLatitude());
+						document.put("Geolong", tweet.getGeoLocation().getLongitude());
+						System.out.println("Geolocation: "+tweet.getGeoLocation().getLatitude() + " " + tweet.getGeoLocation().getLongitude());
+					}
+
 					System.out.println("==========================");
-					documentList.add(document);
 					count++;
+					documentList.add(document);
+					System.out.println("COUNT: "+count);
 				}
 				
 				//while query still has results or number of tweets retrieved has not been hit

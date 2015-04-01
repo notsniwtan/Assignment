@@ -76,6 +76,7 @@ pageEncoding="ISO-8859-1"%>
 			<c:forEach items="${resultList}" var="document">
 				<tr>
 					<td>${document.content}</td>
+					<td>${document.date}</td>
 				</tr>
 			</c:forEach>
 		</c:otherwise>
