@@ -33,6 +33,8 @@ public class ProcessQuery extends HttpServlet{
 			
 			//uses the /select request handler in solrconfig.xml
 			parameter.set("qt", "/select");
+			//set to return relevancy score, use .score to retrieve value
+			parameter.setIncludeScore(true);
 			QueryResponse res = server.query(parameter);
 			
 			SolrDocumentList resultList = res.getResults();

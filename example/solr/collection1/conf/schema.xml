@@ -123,7 +123,7 @@
         NOTE: This field is not indexed by default, since it is also copied to "text"
         using copyField below. This is to save space. Use this field for returning and
         highlighting document content. Use the "text" field to search the content. -->
-   <field name="content" type="text_en" indexed="true" stored="true" multiValued="true"/>
+   <field name="content" type="text_general" indexed="true" stored="true"/>
    <field name="author" type="string" indexed="true" stored="true"/>
    <field name="authorProfilePic" type="string" indexed="false" stored="true"/>
    <field name="date" type="date" indexed="true" stored="true"/>
@@ -134,6 +134,7 @@
    <field name="geolong" type="double" indexed="false" stored="true" />
    <field name="geolang" type="double" indexed="false" stored="true" />
    <field name="image" type="string" indexed="false" stored="true" />
+   <field name="url" type="string" indexed="false" stored="true"/>
    
    
 

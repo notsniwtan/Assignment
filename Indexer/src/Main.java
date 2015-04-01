@@ -134,6 +134,7 @@ public class Main {
 					doc.addField("geolang", (double)innerObj.get("Geolang"));
 				}
 				doc.addField("image", (String) innerObj.get("Photo"));
+				doc.addField("url", (String) innerObj.get("URL"));
 
 
 				server.add(doc);

@@ -11,12 +11,27 @@ pageEncoding="ISO-8859-1"%>
 
 	<title></title>
 
-	<style>
-        table, th, td {
-            cellpadding:1px;
-            cellspacing:1px;
-        }
-  
+		<style>
+	        
+		#searchResults{
+			position: absolute;
+		    top: 100px;
+		    bottom: 0;
+		    left: 200px;
+		    right: 0;
+		    width: 1000px;
+		    height: 100px;
+		}
+		
+		#bottom{
+			border-bottom: thin solid;
+		}
+  		#a{background-color: white;
+  			color:blue;
+  			width: 5px;
+  			text-align: left;
+  			display: initial;}
+  		
         a:link, a:visited {
         	display: inline-block;
         	font-weight: bold;
@@ -41,7 +56,7 @@ pageEncoding="ISO-8859-1"%>
     <script>
         $(document).ready(function(){
             $('#data').after('<div id="nav"></div>');
-            var rowsShown = 10;
+            var rowsShown = 40;
             var rowsTotal = $('#data tbody tr').length;
             var numPages = Math.round(rowsTotal/rowsShown);
             for(i = 0;i < numPages;i++) {
@@ -67,7 +82,8 @@ pageEncoding="ISO-8859-1"%>
 </head>
 
 <body>
-	<table id="data">
+<div id="searchResults">
+	<table id="data" cellspacing="10" cellpadding="1">
 		<c:choose>
 			<c:when test="${listEmpty == true}">
 				No search results were found!
@@ -75,13 +91,25 @@ pageEncoding="ISO-8859-1"%>
 		<c:otherwise>
 			<c:forEach items="${resultList}" var="document">
 				<tr>
-					<td>${document.content}</td>
-					<td>${document.date}</td>
+					<td width="1%" rowspan="2"><img width="43px" src="${document.authorProfilePic}"></td>	
+					<td align="left"><span style="font-weight:bold">${document.author}</span></td>			
+				</tr>
+				<tr>
+					<td><span style="font-size:small">Tweeted at: ${document.date.date}/${document.date.month}/${document.date.year+1900}  
+					${document.date.hours}:${document.date.minutes}:${document.date.seconds}
+					</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span></td>
+				</tr>
+				<tr>
+					<td id="bottom" colspan="2"><a id="a" href="${document.url}">${document.url}</a></td>
 				</tr>
 			</c:forEach>
 		</c:otherwise>
 		</c:choose>
 	</table>
+	</div>
 </body>
 
 </html>
