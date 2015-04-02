@@ -17,25 +17,35 @@ public class Controller extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String queryString = request.getParameter("query");
-		String queryTypeString = request.getParameter("queryType");
+		String action = request.getParameter("action");
+		if(action.equals("Search")){
+			String queryString = request.getParameter("query");
+			String queryTypeString = request.getParameter("queryType");
 
-		String target = "";
-		String jspTarget = "";
-		
-		switch(queryTypeString){
-		case "default": target = "/processquery";
-			jspTarget="resultSection.jsp";
-			break;
-		case "image": target = "/processimagequery";
-			jspTarget="resultImageSection.jsp";
-			break;
+			String target = "";
+			String jspTarget = "";
+			
+			switch(queryTypeString){
+			case "default": target = "/processquery";
+				jspTarget="resultSection.jsp";
+				break;
+			case "image": target = "/processimagequery";
+				jspTarget="resultImageSection.jsp";
+				break;
+			}
+			
+			request.setAttribute("query", queryString);
+			request.setAttribute("queryDisplayTarget", jspTarget);
+			RequestDispatcher rd = getServletContext().getRequestDispatcher(target);
+			rd.forward(request, response);
+		}else if(action.equals("Index")){
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+			rd.forward(request, response);
 		}
 		
-		request.setAttribute("query", queryString);
-		request.setAttribute("queryDisplayTarget", jspTarget);
-		RequestDispatcher rd = getServletContext().getRequestDispatcher(target);
-		rd.forward(request, response);
+		
+		
+		
 	}
 
 }

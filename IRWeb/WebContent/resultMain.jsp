@@ -23,7 +23,8 @@
 <div id="search">
 	<form action="controller" method="POST">
 		Search Query: <input type="text" name="query" size="50" value="${query}" />
-		<input type="submit" value="Search" />
+		<input type="submit" name="action" value="Search" />
+		<input type="submit" name="action" value="Index" />
 		<br>
 		Based On : &nbsp&nbsp&nbsp&nbsp   <select name="queryType">
 		<option value="default" selected="selected">None</option>

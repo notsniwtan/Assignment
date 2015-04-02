@@ -17,5 +17,7 @@
 	<classpathentry kind="lib" path="libs/httpmime.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="libs/twitter4j-core-4.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/twitter4j-stream-4.0.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

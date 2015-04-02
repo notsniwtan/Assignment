@@ -14,6 +14,10 @@
     <servlet-class>Servlet.ProcessImageQuery</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>Servlet.Index</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ControllerServlet</servlet-name>
     <servlet-class>Servlet.Controller</servlet-class>
   </servlet>
@@ -32,5 +36,9 @@
   <servlet-mapping>
     <servlet-name>ProcessImageQueryServlet</servlet-name>
     <url-pattern>/processimagequery</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/index</url-pattern>
   </servlet-mapping>
 </web-app>

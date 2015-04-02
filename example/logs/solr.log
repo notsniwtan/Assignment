@@ -3971,3 +3971,237 @@ INFO  - 2015-04-03 00:21:52.942; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-03 00:25:13.677; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=3 status=0 QTime=1 
 INFO  - 2015-04-03 00:25:23.616; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=test&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=14 
 INFO  - 2015-04-03 00:26:24.285; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=google&wt=javabin&qt=/hashtag&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-03 00:43:51.157; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=3 status=0 QTime=1 
+INFO  - 2015-04-03 00:46:15.667; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=3 status=0 QTime=1 
+INFO  - 2015-04-03 01:16:13.137; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=3 status=0 QTime=0 
+INFO  - 2015-04-03 01:16:24.464; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits:num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1m,generation=58,filenames=[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1m, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:16:24.465; org.apache.solr.core.SolrDeletionPolicy; newest commit = 58[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1m, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:16:24.469; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {} 0 83
+ERROR - 2015-04-03 01:16:24.471; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: ERROR: [doc=583679258817597440] unknown field 'Hashtags'
+	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:313)
+	at org.apache.solr.update.AddUpdateCommand.getLuceneDocument(AddUpdateCommand.java:73)
+	at org.apache.solr.update.DirectUpdateHandler2.addDoc(DirectUpdateHandler2.java:199)
+	at org.apache.solr.update.processor.RunUpdateProcessor.processAdd(RunUpdateProcessorFactory.java:69)
+	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:51)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.doLocalAdd(DistributedUpdateProcessor.java:504)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.versionAdd(DistributedUpdateProcessor.java:640)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.processAdd(DistributedUpdateProcessor.java:396)
+	at org.apache.solr.update.processor.LogUpdateProcessor.processAdd(LogUpdateProcessorFactory.java:100)
+	at org.apache.solr.handler.loader.XMLLoader.processUpdate(XMLLoader.java:246)
+	at org.apache.solr.handler.loader.XMLLoader.load(XMLLoader.java:173)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1816)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:656)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:359)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:155)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:948)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+INFO  - 2015-04-03 01:17:18.239; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=19 status=0 QTime=0 
+INFO  - 2015-04-03 01:17:25.862; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {} 0 1
+ERROR - 2015-04-03 01:17:25.863; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: ERROR: [doc=583679571788169216] unknown field 'Content'
+	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:313)
+	at org.apache.solr.update.AddUpdateCommand.getLuceneDocument(AddUpdateCommand.java:73)
+	at org.apache.solr.update.DirectUpdateHandler2.addDoc(DirectUpdateHandler2.java:199)
+	at org.apache.solr.update.processor.RunUpdateProcessor.processAdd(RunUpdateProcessorFactory.java:69)
+	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:51)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.doLocalAdd(DistributedUpdateProcessor.java:504)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.versionAdd(DistributedUpdateProcessor.java:640)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.processAdd(DistributedUpdateProcessor.java:396)
+	at org.apache.solr.update.processor.LogUpdateProcessor.processAdd(LogUpdateProcessorFactory.java:100)
+	at org.apache.solr.handler.loader.XMLLoader.processUpdate(XMLLoader.java:246)
+	at org.apache.solr.handler.loader.XMLLoader.load(XMLLoader.java:173)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1816)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:656)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:359)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:155)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:948)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+INFO  - 2015-04-03 01:17:56.810; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=19 status=0 QTime=1 
+INFO  - 2015-04-03 01:18:02.207; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[583679615790686208 (1497361371293024256), 583679599214596097 (1497361371311898624), 583679571788169216 (1497361371313995776), 583679561138831360 (1497361371315044352), 583679539894755328 (1497361371316092928), 583679499973353473 (1497361371318190080)]} 0 27
+INFO  - 2015-04-03 01:18:02.213; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2015-04-03 01:18:02.305; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1m,generation=58,filenames=[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1m, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1n,generation=59,filenames=[_1e.nvd, _1e_Lucene41_0.pos, _1f_Lucene41_0.tip, segments_1n, _1e.fdx, _1f.fdt, _1e.fdt, _1f.fnm, _1e.si, _1f_Lucene41_0.doc, _1e_Lucene41_0.doc, _1e.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1f.fdx, _1f_Lucene41_0.pos, _1f.si, _1f.nvm, _1e_Lucene41_0.tim, _1e.fnm]
+INFO  - 2015-04-03 01:18:02.306; org.apache.solr.core.SolrDeletionPolicy; newest commit = 59[_1e.nvd, _1e_Lucene41_0.pos, _1f_Lucene41_0.tip, segments_1n, _1e.fdx, _1f.fdt, _1e.fdt, _1f.fnm, _1e.si, _1f_Lucene41_0.doc, _1e_Lucene41_0.doc, _1e.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1f.fdx, _1f_Lucene41_0.pos, _1f.si, _1f.nvm, _1e_Lucene41_0.tim, _1e.fnm]
+INFO  - 2015-04-03 01:18:02.313; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@16d28f74 main
+INFO  - 2015-04-03 01:18:02.314; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2015-04-03 01:18:02.315; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@16d28f74 main{StandardDirectoryReader(segments_1n:156:nrt _1e(4.3):C7186 _1f(4.3):C6)}
+INFO  - 2015-04-03 01:18:02.315; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2015-04-03 01:18:02.318; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@16d28f74 main{StandardDirectoryReader(segments_1n:156:nrt _1e(4.3):C7186 _1f(4.3):C6)}
+INFO  - 2015-04-03 01:18:02.319; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 106
+INFO  - 2015-04-03 01:18:29.897; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1427995109890&wt=json} status=0 QTime=5 
+INFO  - 2015-04-03 01:18:29.930; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1427995109918&wt=json} status=0 QTime=3 
+INFO  - 2015-04-03 01:19:22.653; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=19 status=0 QTime=1 
+INFO  - 2015-04-03 01:19:28.313; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[583680053185249280 (1497361461600583680), 583680008302030848 (1497361461604777984), 583679918724251648 (1497361461606875136)]} 0 9
+ERROR - 2015-04-03 01:19:28.313; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: ERROR: [doc=583679892014759938] multiple values encountered for non multiValued field url: [http://t.co/ZueUG9A99x, https://t.co/xWWlG9JpwM]
+	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:229)
+	at org.apache.solr.update.AddUpdateCommand.getLuceneDocument(AddUpdateCommand.java:73)
+	at org.apache.solr.update.DirectUpdateHandler2.addDoc(DirectUpdateHandler2.java:199)
+	at org.apache.solr.update.processor.RunUpdateProcessor.processAdd(RunUpdateProcessorFactory.java:69)
+	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:51)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.doLocalAdd(DistributedUpdateProcessor.java:504)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.versionAdd(DistributedUpdateProcessor.java:640)
+	at org.apache.solr.update.processor.DistributedUpdateProcessor.processAdd(DistributedUpdateProcessor.java:396)
+	at org.apache.solr.update.processor.LogUpdateProcessor.processAdd(LogUpdateProcessorFactory.java:100)
+	at org.apache.solr.handler.loader.XMLLoader.processUpdate(XMLLoader.java:246)
+	at org.apache.solr.handler.loader.XMLLoader.load(XMLLoader.java:173)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1816)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:656)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:359)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:155)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:948)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+INFO  - 2015-04-03 01:19:43.310; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2015-04-03 01:19:43.364; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1n,generation=59,filenames=[_1e.nvd, _1e_Lucene41_0.pos, _1f_Lucene41_0.tip, segments_1n, _1e.fdx, _1f.fdt, _1e.fdt, _1f.fnm, _1e.si, _1f_Lucene41_0.doc, _1e_Lucene41_0.doc, _1e.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1f.fdx, _1f_Lucene41_0.pos, _1f.si, _1f.nvm, _1e_Lucene41_0.tim, _1e.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1o,generation=60,filenames=[_1e.nvd, _1g.fdx, segments_1o, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1f.fdx, _1g.fnm, _1f.si, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1g.si, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:19:43.364; org.apache.solr.core.SolrDeletionPolicy; newest commit = 60[_1e.nvd, _1g.fdx, segments_1o, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1f.fdx, _1g.fnm, _1f.si, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1g.si, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:19:43.368; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@560a68d6 realtime
+INFO  - 2015-04-03 01:19:43.369; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2015-04-03 01:22:24.982; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=19 status=0 QTime=1 
+INFO  - 2015-04-03 01:22:30.651; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[583680788962476032 (1497361652792688640), 583680749749964800 (1497361652795834368), 583680658142179328 (1497361652797931520), 583680601829441537 (1497361652798980096), 583680556157632512 (1497361652800028672), 583680554341531649 (1497361652802125824)]} 0 12
+INFO  - 2015-04-03 01:22:30.656; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2015-04-03 01:22:30.778; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1o,generation=60,filenames=[_1e.nvd, _1g.fdx, segments_1o, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1f.fdx, _1g.fnm, _1f.si, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1f.nvd, _1g.si, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1p,generation=61,filenames=[_1e.nvd, segments_1p, _1g.fdx, _1h.fnm, _1h.fdt, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1h.nvd, _1f.fdx, _1g.fnm, _1h.nvm, _1h_Lucene41_0.tim, _1f.si, _1h_Lucene41_0.tip, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1h_Lucene41_0.pos, _1h.si, _1f.nvd, _1g.si, _1h_Lucene41_0.doc, _1h.fdx, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:22:30.779; org.apache.solr.core.SolrDeletionPolicy; newest commit = 61[_1e.nvd, segments_1p, _1g.fdx, _1h.fnm, _1h.fdt, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1h.nvd, _1f.fdx, _1g.fnm, _1h.nvm, _1h_Lucene41_0.tim, _1f.si, _1h_Lucene41_0.tip, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1h_Lucene41_0.pos, _1h.si, _1f.nvd, _1g.si, _1h_Lucene41_0.doc, _1h.fdx, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+INFO  - 2015-04-03 01:22:30.784; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@52e06b00 main
+INFO  - 2015-04-03 01:22:30.785; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2015-04-03 01:22:30.785; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@52e06b00 main{StandardDirectoryReader(segments_1p:160:nrt _1e(4.3):C7186 _1f(4.3):C6 _1g(4.3):C3 _1h(4.3):C6)}
+INFO  - 2015-04-03 01:22:30.785; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2015-04-03 01:22:30.789; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@52e06b00 main{StandardDirectoryReader(segments_1p:160:nrt _1e(4.3):C7186 _1f(4.3):C6 _1g(4.3):C3 _1h(4.3):C6)}
+INFO  - 2015-04-03 01:22:30.789; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 134
+INFO  - 2015-04-03 01:23:26.411; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1427995406371&show=index&wt=json} status=0 QTime=2 
+INFO  - 2015-04-03 01:23:26.412; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1427995406379} status=0 QTime=2 
+INFO  - 2015-04-03 01:23:26.413; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&_=1427995406380&wt=json} status=503 QTime=3 
+INFO  - 2015-04-03 01:23:26.419; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={command=details&_=1427995406375&wt=json} status=0 QTime=11 
+INFO  - 2015-04-03 01:23:34.372; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=id:583680749749964800&_=1427995414357&wt=xml} hits=1 status=0 QTime=1 
+INFO  - 2015-04-03 01:23:39.513; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1427995419491} status=0 QTime=1 
+INFO  - 2015-04-03 01:23:39.516; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&_=1427995419492&wt=json} status=503 QTime=0 
+INFO  - 2015-04-03 01:23:39.514; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1427995419482&show=index&wt=json} status=0 QTime=4 
+INFO  - 2015-04-03 01:23:39.519; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={command=details&_=1427995419487&wt=json} status=0 QTime=8 
+INFO  - 2015-04-03 01:23:50.061; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=id:583680749749964800%0a&_=1427995430046&wt=xml} hits=1 status=0 QTime=1 
+INFO  - 2015-04-03 01:24:38.565; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=19 status=0 QTime=1 
+INFO  - 2015-04-03 01:26:19.527; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={wt=javabin&version=2} {add=[583681374646886402 (1497361889828536320), 583681243465715712 (1497361889832730624), 583681212407017473 (1497361889833779200), 583681100377104384 (1497361889834827776), 583681074569547777 (1497361889835876352), 583681050544623616 (1497361889837973504), 583680986778574848 (1497361889839022080), 583680972505407490 (1497361889840070656), 583680889957253121 (1497361889841119232), 583680788962476032 (1497361889843216384), ... (11958 adds)]} 0 2832
+INFO  - 2015-04-03 01:26:19.533; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2015-04-03 01:26:21.470; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1p,generation=61,filenames=[_1e.nvd, segments_1p, _1g.fdx, _1h.fnm, _1h.fdt, _1f.fnm, _1e.si, _1g_Lucene41_0.pos, _1e.nvm, _1f_Lucene41_0.doc, _1g_Lucene41_0.tip, _1g_Lucene41_0.tim, _1h.nvd, _1f.fdx, _1g.fnm, _1h.nvm, _1h_Lucene41_0.tim, _1f.si, _1h_Lucene41_0.tip, _1e.fnm, _1f_Lucene41_0.tip, _1e_Lucene41_0.pos, _1g.fdt, _1e.fdx, _1g.nvd, _1f.fdt, _1e.fdt, _1e_Lucene41_0.doc, _1g.nvm, _1f_Lucene41_0.tim, _1e_Lucene41_0.tip, _1h_Lucene41_0.pos, _1h.si, _1f.nvd, _1g.si, _1h_Lucene41_0.doc, _1h.fdx, _1f_Lucene41_0.pos, _1f.nvm, _1g_Lucene41_0.doc, _1e_Lucene41_0.tim]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1q,generation=62,filenames=[_1i_Lucene41_0.tip, _1e.nvd, segments_1q, _1e_Lucene41_0.pos, _1e.fdx, _1i.fnm, _1i_Lucene41_0.doc, _1e.fdt, _1i_Lucene41_0.tim, _1e_1.del, _1e.si, _1e_Lucene41_0.doc, _1e.nvm, _1i_Lucene41_0.pos, _1e_Lucene41_0.tip, _1i.fdt, _1i.nvm, _1i.nvd, _1i.si, _1i.fdx, _1e_Lucene41_0.tim, _1e.fnm]
+INFO  - 2015-04-03 01:26:21.470; org.apache.solr.core.SolrDeletionPolicy; newest commit = 62[_1i_Lucene41_0.tip, _1e.nvd, segments_1q, _1e_Lucene41_0.pos, _1e.fdx, _1i.fnm, _1i_Lucene41_0.doc, _1e.fdt, _1i_Lucene41_0.tim, _1e_1.del, _1e.si, _1e_Lucene41_0.doc, _1e.nvm, _1i_Lucene41_0.pos, _1e_Lucene41_0.tip, _1i.fdt, _1i.nvm, _1i.nvd, _1i.si, _1i.fdx, _1e_Lucene41_0.tim, _1e.fnm]
+INFO  - 2015-04-03 01:26:21.508; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@732d188a main
+INFO  - 2015-04-03 01:26:21.509; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@732d188a main{StandardDirectoryReader(segments_1q:164:nrt _1e(4.3):C7186/7108 _1i(4.3):C11958)}
+INFO  - 2015-04-03 01:26:21.510; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2015-04-03 01:26:21.512; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@732d188a main{StandardDirectoryReader(segments_1q:164:nrt _1e(4.3):C7186/7108 _1i(4.3):C11958)}
+INFO  - 2015-04-03 01:26:21.520; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2015-04-03 01:26:21.531; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 1998
+INFO  - 2015-04-03 01:26:47.536; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1427995607505&wt=json} status=0 QTime=3 
+INFO  - 2015-04-03 01:26:47.566; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1427995607538&wt=json} status=0 QTime=4 
+INFO  - 2015-04-03 01:26:51.289; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=true,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2015-04-03 01:26:52.016; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1q,generation=62,filenames=[_1i_Lucene41_0.tip, _1e.nvd, segments_1q, _1e_Lucene41_0.pos, _1e.fdx, _1i.fnm, _1i_Lucene41_0.doc, _1e.fdt, _1i_Lucene41_0.tim, _1e_1.del, _1e.si, _1e_Lucene41_0.doc, _1e.nvm, _1i_Lucene41_0.pos, _1e_Lucene41_0.tip, _1i.fdt, _1i.nvm, _1i.nvd, _1i.si, _1i.fdx, _1e_Lucene41_0.tim, _1e.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@194d1417; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1r,generation=63,filenames=[_1j_Lucene41_0.pos, _1j.nvm, _1j.si, _1j.fdt, _1j.fnm, _1j_Lucene41_0.tim, _1j.nvd, _1j.fdx, segments_1r, _1j_Lucene41_0.doc, _1j_Lucene41_0.tip]
+INFO  - 2015-04-03 01:26:52.016; org.apache.solr.core.SolrDeletionPolicy; newest commit = 63[_1j_Lucene41_0.pos, _1j.nvm, _1j.si, _1j.fdt, _1j.fnm, _1j_Lucene41_0.tim, _1j.nvd, _1j.fdx, segments_1r, _1j_Lucene41_0.doc, _1j_Lucene41_0.tip]
+INFO  - 2015-04-03 01:26:52.038; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@69824fe7 main
+INFO  - 2015-04-03 01:26:52.039; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2015-04-03 01:26:52.039; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@69824fe7 main{StandardDirectoryReader(segments_1r:166:nrt _1j(4.3):C12036)}
+INFO  - 2015-04-03 01:26:52.039; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2015-04-03 01:26:52.041; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@69824fe7 main{StandardDirectoryReader(segments_1r:166:nrt _1j(4.3):C12036)}
+INFO  - 2015-04-03 01:26:52.058; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={optimize=true&_=1427995611272&wt=json&waitFlush=true} {optimize=} 0 769
+INFO  - 2015-04-03 01:29:15.825; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=35 status=0 QTime=1 
+INFO  - 2015-04-03 01:31:16.564; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2015-04-03 01:31:16.565; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/Users/Notsniw/Desktop/Workspace/Assignment/example/solr-webapp/webapp/},C:\Users\Notsniw\Desktop\Workspace\Assignment\example/webapps/solr.war
+INFO  - 2015-04-03 01:31:17.565; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=39111281
+INFO  - 2015-04-03 01:31:17.572; org.apache.solr.core.SolrCore; [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@6968055f
+INFO  - 2015-04-03 01:31:17.578; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=4,autocommit maxTime=15000ms,autocommits=1,soft autocommits=0,optimizes=1,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=3,cumulative_adds=11976,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=3}
+INFO  - 2015-04-03 01:31:17.579; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2015-04-03 01:31:17.579; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2015-04-03 01:31:17.579; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2015-04-03 01:31:17.585; org.apache.solr.core.SolrCore; [collection1] Closing main searcher on request.
+INFO  - 2015-04-03 01:31:17.588; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2015-04-03 01:31:17.591; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data [CachedDir<<refCount=0;path=C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data;done=false>>]
+INFO  - 2015-04-03 01:31:17.592; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data
+INFO  - 2015-04-03 01:31:17.593; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index [CachedDir<<refCount=0;path=C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index;done=false>>]
+INFO  - 2015-04-03 01:31:17.594; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index
+INFO  - 2015-04-03 01:31:17.598; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/Users/Notsniw/Desktop/Workspace/Assignment/example/solr-webapp/webapp/},C:\Users\Notsniw\Desktop\Workspace\Assignment\example/webapps/solr.war
+INFO  - 2015-04-03 01:31:17.652; org.eclipse.jetty.util.thread.ShutdownThread; shutdown already commenced
