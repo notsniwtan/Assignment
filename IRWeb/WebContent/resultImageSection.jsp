@@ -84,6 +84,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
 <div id="searchResults">
 	<table id="data" cellspacing="10" cellpadding="1">
+	<tr><td colspan="2" id="bottom">${numHits} results found (${timeTaken/1000} seconds)</td></tr>
 		<c:choose>
 			<c:when test="${listEmpty == true}">
 				No search results were found!
@@ -103,7 +104,7 @@ pageEncoding="ISO-8859-1"%>
 					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a id="a" href="${document.url}">${document.url}</a>${document.hashtag}   </td>
+					<td colspan="2"><a id="a" href="${document.url}">${document.url}</a></td>
 				</tr>
 				<tr>
 					<td id="bottom" colspan="2"><img src="${document.image}"></td>

@@ -84,6 +84,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
 <div id="searchResults">
 	<table id="data" cellspacing="10" cellpadding="1">
+	<tr><td colspan="2" id="bottom">${numHits} results found (${timeTaken/1000} seconds)</td></tr>
 		<c:choose>
 			<c:when test="${listEmpty == true}">
 				No search results were found!

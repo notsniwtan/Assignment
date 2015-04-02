@@ -48,6 +48,8 @@ public class ProcessImageQuery extends HttpServlet {
 				request.setAttribute("resultList", resultList);
 			}
 			
+			request.setAttribute("timeTaken", res.getElapsedTime());
+			request.setAttribute("numHits", resultList.getNumFound());
 			request.setAttribute("query", queryString);
 			request.setAttribute("queryDisplayTarget", queryTypeString);
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/resultMain.jsp");

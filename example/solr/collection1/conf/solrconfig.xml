@@ -797,6 +797,7 @@
 	 <lst name="defaults">
        <str name="echoParams">explicit</str>
        <int name="rows">100</int>
+	   <str name="omitHeader">true</str>
 	   <str name="defType">dismax</str>
 	   <str name="qf">
       content hashtag^1.5
@@ -815,6 +816,7 @@
        <str name="echoParams">explicit</str>
        <int name="rows">100</int>
        <str name="df">content</str>
+	   <str name="omitHeader">true</str>
      </lst>
     <!-- In addition to defaults, "appends" params can be specified
          to identify values which should be appended to the list of
