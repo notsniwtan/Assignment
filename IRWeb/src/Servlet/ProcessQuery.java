@@ -20,8 +20,9 @@ import org.apache.solr.common.SolrDocumentList;
 public class ProcessQuery extends HttpServlet{
 	SolrServer server = null;
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		String queryString = request.getParameter("query");
-
+		String queryString = (String) request.getAttribute("query");
+		String queryTypeString = (String) request.getAttribute("queryDisplayTarget");
+		
 		try {
 			//setup connection
 			setUpServer("http://localhost:8983/solr/");
@@ -47,6 +48,7 @@ public class ProcessQuery extends HttpServlet{
 			}
 			
 			request.setAttribute("query", queryString);
+			request.setAttribute("queryDisplayTarget", queryTypeString);
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/resultMain.jsp");
 			rd.forward(request, response);
 			

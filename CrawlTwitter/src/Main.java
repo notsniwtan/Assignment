@@ -134,8 +134,8 @@ public class Main {
 					for(MediaEntity me:tweet.getMediaEntities()){
 						if(me.getType().equals("photo")){
 							//tweet photo
-							document.put("Photo", me.getURL());
-							System.out.println("Photo: "+me.getURL());
+							document.put("Photo", me.getMediaURL());
+							System.out.println("Photo: "+me.getMediaURL());
 						}
 					}
 					
@@ -143,21 +143,17 @@ public class Main {
 					document.put("User Profile Pic",tweet.getUser().getProfileImageURL());;
 					System.out.println("Profile URL: "+tweet.getUser().getProfileImageURL());
 					
-					
+					String content = tweet.getText();
 					for(URLEntity ue:tweet.getURLEntities()){
-						if(tweet.getText().contains((CharSequence) ue.getText())){
-							//tweet content
-							document.put("Content",tweet.getText().replace((CharSequence) ue.getText(), ""));
-							System.out.println("Content: "+tweet.getText().replace((CharSequence) ue.getText(), ""));
+						if(content.contains((CharSequence) ue.getText())){
+							content = content.replace((CharSequence) ue.getText(), "");
 							//tweet url
 							document.put("URL", ue.getText());
 							System.out.println("URL: "+ue.getText());
 						}
-						else{
-							document.put("Content", tweet.getText());
-							System.out.println("Content: "+tweet.getText());
-						}
 					}
+					//tweet content
+					document.put("Content", content);
 					
 					if(tweet.getPlace()!=null){
 						//tweet country name

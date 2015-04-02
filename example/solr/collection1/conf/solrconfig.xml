@@ -797,7 +797,10 @@
 	 <lst name="defaults">
        <str name="echoParams">explicit</str>
        <int name="rows">100</int>
-	   <str name="df">hashtag</str>
+	   <str name="defType">dismax</str>
+	   <str name="qf">
+      content hashtag^1.5
+	   </str>
      </lst>
 	 <lst name="appends">
 		<str name="fq">hasImage:true</str>

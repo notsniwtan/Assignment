@@ -24,8 +24,9 @@
 </head>
 <body>
 <div id="search">
-	<form action="processquery" method="POST">
+	<form action="controller" method="POST">
 		Search Query: <input type="text" name="query">
+		<input type="hidden" name="queryType" value="default">
 	<input type="submit" value="Search" />
 </form>
 </div>

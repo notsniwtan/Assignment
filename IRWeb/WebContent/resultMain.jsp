@@ -21,12 +21,19 @@
 </head>
 <body>
 <div id="search">
-	<form action="processquery" method="POST">
+	<form action="controller" method="POST">
 		Search Query: <input type="text" name="query" size="50" value="${query}" />
 		<input type="submit" value="Search" />
+		<br>
+		Based On : &nbsp&nbsp&nbsp&nbsp   <select name="queryType">
+		<option value="default" selected="selected">None</option>
+		<option value="image">Image</option>
+		<option value="popularity">Popularity</option>
+		<option value="geolocation">Geolocation</option>
+		</select>
 	</form>
 </div>	
-	<jsp:include page="resultSection.jsp" />
+	<jsp:include page="${queryDisplayTarget}" ></jsp:include>
 
 </body>
 </html>
