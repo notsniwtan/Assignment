@@ -807,6 +807,27 @@
 		<str name="fq">hasImage:true</str>
 	 </lst>
   </requestHandler>
+  
+   <requestHandler name="/favcount" class="solr.SearchHandler">
+	 <lst name="defaults">
+       <str name="echoParams">explicit</str>
+       <int name="rows">100</int>
+       <str name="df">content</str>
+	   <str name="omitHeader">true</str>
+	   <str name="qf">
+       favcount^10
+	   </str>
+     </lst>
+  </requestHandler>
+  
+     <requestHandler name="/date" class="solr.SearchHandler">
+	 <lst name="defaults">
+       <str name="echoParams">explicit</str>
+       <int name="rows">100</int>
+       <str name="df">content</str>
+	   <str name="omitHeader">true</str>
+     </lst>
+  </requestHandler>
 	
   <requestHandler name="/select" class="solr.SearchHandler">
     <!-- default values for query parameters can be specified, these

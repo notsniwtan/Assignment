@@ -31,6 +31,17 @@
 		<option value="image">Image</option>
 		<option value="popularity">Popularity</option>
 		<option value="geolocation">Geolocation</option>
+		<option value="date">Most Recent</option>
+		</select>
+		&nbsp&nbsp Country : &nbsp&nbsp   <select name="queryCountry">
+		<option value="default" selected="selected">None</option>
+		<option value="United States">United States</option>
+		<option value="United Kingdom">United Kingdom</option>
+		<option value="Ireland">Ireland</option>
+		<option value="Deutschland">Germany</option>
+		<option value="France">France</option>
+		<option value="Italia">Italy</option>
+		<option value="Schweiz">Switzerland</option>
 		</select>
 	</form>
 </div>	

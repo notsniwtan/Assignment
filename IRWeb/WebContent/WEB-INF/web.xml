@@ -13,6 +13,18 @@
     <servlet-name>ProcessImageQueryServlet</servlet-name>
     <servlet-class>Servlet.ProcessImageQuery</servlet-class>
   </servlet>
+    <servlet>
+    <servlet-name>ProcessGeolocationQueryServlet</servlet-name>
+    <servlet-class>Servlet.ProcessGeolocationQuery</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>ProcessPopularityQueryServlet</servlet-name>
+    <servlet-class>Servlet.ProcessPopularityQuery</servlet-class>
+  </servlet>
+      <servlet>
+    <servlet-name>ProcessDateQueryServlet</servlet-name>
+    <servlet-class>Servlet.ProcessDateQuery</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>IndexServlet</servlet-name>
     <servlet-class>Servlet.Index</servlet-class>
@@ -37,6 +49,18 @@
     <servlet-name>ProcessImageQueryServlet</servlet-name>
     <url-pattern>/processimagequery</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ProcessGeolocationQueryServlet</servlet-name>
+    <url-pattern>/processgeolocationquery</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ProcessPopularityQueryServlet</servlet-name>
+    <url-pattern>/processpopularityquery</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ProcessDateQueryServlet</servlet-name>
+    <url-pattern>/processdatequery</url-pattern>
+  </servlet-mapping>  
   <servlet-mapping>
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/index</url-pattern>
