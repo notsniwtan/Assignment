@@ -21,7 +21,7 @@ public class Controller extends HttpServlet {
 		if(action.equals("Search")){
 			String queryString = request.getParameter("query");
 			String queryTypeString = request.getParameter("queryType");
-
+			String queryCountryString = request.getParameter("queryCountry");
 			String target = "";
 			String jspTarget = "";
 			
@@ -32,6 +32,16 @@ public class Controller extends HttpServlet {
 			case "image": target = "/processimagequery";
 				jspTarget="resultImageSection.jsp";
 				break;
+			case "popularity": target = "/processpopularityquery";
+				jspTarget="resultPopularitySection.jsp";
+				break;
+			case "geolocation": target = "/processgeolocationquery";
+				jspTarget="resultGeolocationSection.jsp";
+				request.setAttribute("queryCountry", queryCountryString);
+				break;
+			case "date": target = "/processdatequery";
+			jspTarget="resultSection.jsp";
+			break;
 			}
 			
 			request.setAttribute("query", queryString);
