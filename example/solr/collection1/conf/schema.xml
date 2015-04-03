@@ -136,7 +136,7 @@
    <field name="image" type="string" indexed="false" stored="true" />
    <field name="url" type="string" indexed="false" stored="true"/>
    <field name="hasImage" type="boolean" indexed="true" stored="true" default="false"/>
-   
+   <field name="popcount" type="long" indexed="true" stored="true"/>
    
 
    <!-- catchall field, containing all other searchable text fields (implemented
@@ -267,7 +267,7 @@
        single-valued and either required or have a default value.
       -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
-
+	
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
 
