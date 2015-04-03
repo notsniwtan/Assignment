@@ -108,6 +108,7 @@ public class Index extends HttpServlet {
 						doc.addField("geolang", tweet.getGeoLocation().getLatitude());
 					}
 				}
+				doc.addField("popcount", tweet.getFavoriteCount() + tweet.getRetweetCount());
 				documentList.add(doc);
 				/*count++;
 				if(count > 5) break;*/
