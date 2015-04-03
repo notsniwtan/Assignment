@@ -21,9 +21,59 @@ public class Main {
 	public static StringToWordVector filter;
 	public static FilteredClassifier classifier;
 	public static void main(String[] args){
-		loadDataset("sample20.arff");
+		
+		Instances instances;
+		// Create the attributes, class and text
+		FastVector fvNominalVal = new FastVector(2);
+		fvNominalVal.addElement("technology");
+		fvNominalVal.addElement("politics");
+		Attribute attribute1 = new Attribute("class", fvNominalVal);
+		Attribute attribute2 = new Attribute("text",(FastVector) null);
+		// Create list of instances with one element
+		FastVector fvWekaAttributes = new FastVector(2);
+		fvWekaAttributes.addElement(attribute1);
+		fvWekaAttributes.addElement(attribute2);
+		instances = new Instances("Test relation", fvWekaAttributes, 1);
+		// Set class index
+		instances.setClassIndex(0);
+		// Create and add the instance
+		DenseInstance instance = new DenseInstance(2);
+		instance.setValue(attribute2, "testtest");
+		// Another way to do it:
+		// instance.setValue((Attribute)fvWekaAttributes.elementAt(1), text);
+		instances.add(instance);
+		
+		
+		instance .setValue(attribute2, "helhelhel");
+		instances.add(instance);
+		
+		//System.out.println("===== Instance created with reference dataset =====");
+		System.out.println(instances);
+		
+		
+		
+		
+		
+		instances.setClassIndex(0);
+		filter = new StringToWordVector();
+		filter.setAttributeIndices("last");
+		classifier = new FilteredClassifier();
+		classifier.setFilter(filter);
+		classifier.setClassifier(new NaiveBayes());
+		try {
+			classifier.buildClassifier(instances);
+			// Uncomment to see the classifier
+			 System.out.println(classifier);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		//loadDataset("sample20.arff");
 		//evaluate();
-		learn();
+		//learn();
 	}
 	
 	public static void evaluate() {

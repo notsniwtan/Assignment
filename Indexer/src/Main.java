@@ -138,6 +138,7 @@ public class Main {
 					doc.addField("hasImage","true");
 				}
 				doc.addField("url", (String) innerObj.get("URL"));
+				doc.addField("popcount", (long)innerObj.get("Fav Counts")+(long)innerObj.get("Retweet Counts"));
 
 
 				server.add(doc);
