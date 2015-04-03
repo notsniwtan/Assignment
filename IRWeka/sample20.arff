@@ -1,0 +1,27 @@
+@RELATION sample20
+
+@ATTRIBUTE class        {Politics,Economy,Social,Technology}
+@ATTRIBUTE id           NUMERIC
+@ATTRIBUTE content      STRING
+
+@data
+Politics,583681243465715712,'@TheWorldPost: Iran European Union suggest announcement on nuclear understanding is near'
+Politics,583681212407017473,'@TheWorldPost: Iran European Union suggest announcement on nuclear understanding is near '
+Politics,583681100377104384,'Iran European Union Suggest Announcement On Nuclear Understanding Is Near  via @theworldpost'
+Politics,583681074569547777,'Iran European Union suggest announcement on nuclear understanding is near '
+Politics,583681050544623616,'@YahooNews: Iran and European Union suggest theyâ€™re ready to announce a nuclear understanding  '
+Politics,583680986778574848,'@YahooNews: Iran and European Union suggest theyâ€™re ready to announce a nuclear understanding  '
+Politics,583680972505407490,'Iran European Union Suggest Announcement On Nuclear Understanding Is Near | @scoopit '
+Politics,583680889957253121,'@PoliticalCrazy: BREAKING: #IranTalks says nuclear solutions has been found. European Union says "good news"'
+Technology,583680788962476032,'The European Union Is Preparing To Sue Google And It Wants A Fight '
+Technology,583680749749964800,'The European Union Is Preparing To Sue Google And It Wants A Fight '
+Social,583680658142179328,'Have Polish Ancestry? You may be Able to Obtain Polish (and European Union) Citizenship '
+Economy,583680601829441537,'Iran and G5+1 Reach Understanding After 8 Days Negotiations: The European Unionâ€¦  #Anonymous '
+Politics,583680556157632512,'Iran European Union say they will announce a nuclear solution: LAUSANNE Switzerland &gt;&gt; Iran and the European... '
+Politics,583680554341531649,'Iran European Union say they will announce a nuclear solution: LAUSANNE Switzerland &gt;&gt; Iran and the European... '
+Politics,583680552433160192,'Iran European Union say they will announce a nuclear solution: LAUSANNE Switzerland &gt;&gt; Iran and the European... '
+Politics,583680550616965120,'Iran European Union say they will announce a nuclear solution: LAUSANNE Switzerland &gt;&gt; Iran and the European... '
+Politics,583680548876390400,'Iran European Union say they will announce a nuclear solution: LAUSANNE Switzerland &gt;&gt; Iran and the European... '
+Politics,583680532413870080,'Iran European Union Suggest Announcement On Nuclear Understanding Is Near | @scoopit '
+Politics,583680503695310848,'Iran European Union Suggest Announcement On Nuclear Understanding Is Near  via @theworldpost'
+Politics,583680466214985728,'Iran European Union Suggest Announcement On Nuclear Understanding Is Near  via @theworldpost'
