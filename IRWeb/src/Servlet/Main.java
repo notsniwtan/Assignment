@@ -16,4 +16,10 @@ public class Main extends HttpServlet{
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
 		rd.forward(req, resp);
 	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//direct to home.jsp
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
+		rd.forward(req, resp);
+	}
 }
