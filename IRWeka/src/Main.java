@@ -5,6 +5,7 @@ import java.util.Random;
 
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.MultilayerPerceptron;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
@@ -26,7 +27,7 @@ public class Main {
 		
 		//for classifying
 		// Create the attributes, class and text
-		FastVector fvNominalVal = new FastVector(2);
+		/*FastVector fvNominalVal = new FastVector(2);
 		fvNominalVal.addElement("technology");
 		fvNominalVal.addElement("politics");
 		Attribute attribute1 = new Attribute("class", fvNominalVal);
@@ -69,13 +70,13 @@ public class Main {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 		
-		//loadDataset("sample20.arff");
+		loadDataset("sample20.arff");
 		//evaluate();
-		//learn();
+		learn();
 	}
 	
 	public static void evaluate() {
@@ -85,7 +86,10 @@ public class Main {
 		filter.setAttributeIndices("last");
 		classifier = new FilteredClassifier();
 		classifier.setFilter(filter);
-		classifier.setClassifier(new NaiveBayes());
+		//ANN - Machine Learning Based
+		MultilayerPerceptron ann = new MultilayerPerceptron();
+		
+		classifier.setClassifier(ann);
 		Evaluation eval = new Evaluation(trainData);
 		eval.crossValidateModel(classifier, trainData, 4, new Random(1));
 		System.out.println(eval.toSummaryString());
@@ -104,7 +108,10 @@ public class Main {
 			filter.setAttributeIndices("last");
 			classifier = new FilteredClassifier();
 			classifier.setFilter(filter);
-			classifier.setClassifier(new NaiveBayes());
+			//ANN - Machine Learning Based
+			MultilayerPerceptron ann = new MultilayerPerceptron();
+			
+			classifier.setClassifier(ann);
 			classifier.buildClassifier(trainData);
 			// Uncomment to see the classifier
 			 System.out.println(classifier);
@@ -118,12 +125,13 @@ public class Main {
 		try {
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		ArffReader arff = new ArffReader(reader);
+		
 		trainData = arff.getData();
 		System.out.println("===== Loaded dataset: " + fileName + " =====");
 		reader.close();
 		}
 		catch (IOException e) {
-		System.out.println("Problem found when reading: " + fileName);
+		System.out.println("Problem found when reading: " + e);
 		}
 		}
 }
