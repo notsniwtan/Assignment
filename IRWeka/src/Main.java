@@ -23,6 +23,8 @@ public class Main {
 	public static void main(String[] args){
 		
 		Instances instances;
+		
+		//for classifying
 		// Create the attributes, class and text
 		FastVector fvNominalVal = new FastVector(2);
 		fvNominalVal.addElement("technology");
