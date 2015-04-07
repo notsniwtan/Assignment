@@ -17868,3 +17868,162 @@ INFO  - 2015-04-03 20:11:03.490; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-03 20:11:10.951; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1428063070921&wt=json} status=0 QTime=5 
 INFO  - 2015-04-03 20:11:10.963; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={_=1428063070943&show=schema&wt=json} status=0 QTime=3 
 >>>>>>> fadd11e8b39e2a2a3e3ac932d64a5ae9d7620658
+INFO  - 2015-04-06 17:40:11.707; org.eclipse.jetty.server.Server; jetty-8.1.8.v20121106
+INFO  - 2015-04-06 17:40:11.757; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor D:\NTU\CZ4034 Information Retrieval\Assignment\example\contexts at interval 0
+INFO  - 2015-04-06 17:40:11.757; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: D:\NTU\CZ4034 Information Retrieval\Assignment\example\contexts\solr-jetty-context.xml
+INFO  - 2015-04-06 17:40:14.207; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2015-04-06 17:40:14.237; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/solr-webapp/webapp/},D:\NTU\CZ4034 Information Retrieval\Assignment\example/webapps/solr.war
+INFO  - 2015-04-06 17:40:14.237; org.eclipse.jetty.server.handler.ContextHandler; started o.e.j.w.WebAppContext{/solr,file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/solr-webapp/webapp/},D:\NTU\CZ4034 Information Retrieval\Assignment\example/webapps/solr.war
+INFO  - 2015-04-06 17:40:14.257; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2015-04-06 17:40:14.287; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2015-04-06 17:40:14.287; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2015-04-06 17:40:14.307; org.apache.solr.core.CoreContainer$Initializer; looking for solr config file: D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\solr.xml
+INFO  - 2015-04-06 17:40:14.307; org.apache.solr.core.CoreContainer; New CoreContainer 898557489
+INFO  - 2015-04-06 17:40:14.327; org.apache.solr.core.CoreContainer; Loading CoreContainer using Solr Home: 'solr/'
+INFO  - 2015-04-06 17:40:14.327; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2015-04-06 17:40:14.627; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2015-04-06 17:40:14.637; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2015-04-06 17:40:15.057; org.apache.solr.core.CoreContainer; Registering Log Listener
+INFO  - 2015-04-06 17:40:15.077; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using instanceDir: solr\collection1
+INFO  - 2015-04-06 17:40:15.077; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\collection1\'
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.157; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/fontbox-1.7.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/jempbox-1.7.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/pdfbox-1.7.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/poi-3.8.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/poi-ooxml-3.8.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/poi-ooxml-schemas-3.8.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/poi-scratchpad-3.8.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/tika-core-1.3.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/tika-parsers-1.3.jar' to classloader
+INFO  - 2015-04-06 17:40:15.167; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/dist/solr-cell-4.3.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/attributes-binder-1.0.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/carrot2-mini-3.6.2.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/hppc-0.4.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/clustering/lib/simple-xml-2.6.4.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/dist/solr-clustering-4.3.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2015-04-06 17:40:15.177; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/dist/solr-langid-4.3.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Adding 'file:/D:/NTU/CZ4034%20Information%20Retrieval/Assignment/example/dist/solr-velocity-4.3.0.jar' to classloader
+WARN  - 2015-04-06 17:40:15.187; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: /non/existent/dir/yields/warning (resolved as: D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\non\existent\dir\yields\warning).
+INFO  - 2015-04-06 17:40:16.157; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_43
+INFO  - 2015-04-06 17:40:16.257; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2015-04-06 17:40:16.287; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2015-04-06 17:40:16.317; org.apache.solr.schema.IndexSchema; Schema name=example
+INFO  - 2015-04-06 17:40:16.617; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2015-04-06 17:40:16.987; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2015-04-06 17:40:17.007; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2015-04-06 17:40:17.327; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2015-04-06 17:40:17.337; org.apache.solr.core.SolrCore; [collection1] Opening new SolrCore at solr\collection1\, dataDir=D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\data\
+INFO  - 2015-04-06 17:40:17.337; org.apache.solr.core.JmxMonitoredMap; JMX monitoring is enabled. Adding Solr mbeans to JMX Server: com.sun.jmx.mbeanserver.JmxMBeanServer@723f50d5
+INFO  - 2015-04-06 17:40:17.367; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2015-04-06 17:40:17.367; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2015-04-06 17:40:17.367; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2015-04-06 17:40:17.387; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\data
+INFO  - 2015-04-06 17:40:17.387; org.apache.solr.core.SolrCore; New index directory detected: old=null new=D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\data\index/
+INFO  - 2015-04-06 17:40:17.387; org.apache.solr.core.CachingDirectoryFactory; return new directory for D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\data\index
+INFO  - 2015-04-06 17:40:17.397; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2015-04-06 17:40:17.397; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2015-04-06 17:40:17.397; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2015-04-06 17:40:17.407; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2015-04-06 17:40:17.407; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2015-04-06 17:40:17.477; org.apache.solr.core.RequestHandlers; created /hashtag: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.477; org.apache.solr.core.RequestHandlers; created /favcount: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.477; org.apache.solr.core.RequestHandlers; created /date: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.477; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.477; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.487; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2015-04-06 17:40:17.487; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.487; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2015-04-06 17:40:17.487; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2015-04-06 17:40:17.497; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.507; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.517; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.517; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.517; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2015-04-06 17:40:17.577; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2015-04-06 17:40:17.577; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2015-04-06 17:40:17.587; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2015-04-06 17:40:17.887; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@40e89810 main
+INFO  - 2015-04-06 17:40:19.017; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2015-04-06 17:40:19.017; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2015-04-06 17:40:19.017; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2015-04-06 17:40:19.027; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2015-04-06 17:40:19.047; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2015-04-06 17:40:19.047; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: D:\NTU\CZ4034 Information Retrieval\Assignment\example\solr\collection1\conf\elevate.xml
+INFO  - 2015-04-06 17:40:19.277; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2015-04-06 17:40:19.277; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@40e89810 main{StandardDirectoryReader(segments_2a:216 _1y(4.3):C6459 _1z(4.3):C357 _20(4.3):C344)}
+INFO  - 2015-04-06 17:40:19.527; org.apache.solr.core.SolrCore; [collection1] webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=1 status=0 QTime=240 
+INFO  - 2015-04-06 17:40:19.537; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2015-04-06 17:40:19.537; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2015-04-06 17:40:19.537; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2015-04-06 17:40:19.537; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@40e89810 main{StandardDirectoryReader(segments_2a:216 _1y(4.3):C6459 _1z(4.3):C357 _20(4.3):C344)}
+INFO  - 2015-04-06 17:40:19.547; org.apache.solr.core.CoreContainer; registering core: collection1
+INFO  - 2015-04-06 17:40:19.547; org.apache.solr.servlet.SolrDispatchFilter; user.dir=D:\NTU\CZ4034 Information Retrieval\Assignment\example
+INFO  - 2015-04-06 17:40:19.547; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2015-04-06 17:40:19.577; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2015-04-06 17:40:34.063; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1428313234051} status=0 QTime=1 
+INFO  - 2015-04-06 17:40:34.095; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1428313234077} status=0 QTime=3 
+INFO  - 2015-04-06 17:40:37.434; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1428313237380} status=0 QTime=1 
+INFO  - 2015-04-06 17:40:37.435; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1428313237385} status=0 QTime=0 
+INFO  - 2015-04-06 17:40:37.526; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1428313237507} status=503 QTime=2 
+INFO  - 2015-04-06 17:40:37.527; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1428313237493} status=0 QTime=11 
+INFO  - 2015-04-06 17:40:37.527; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1428313237505} status=0 QTime=0 
+INFO  - 2015-04-06 17:40:37.532; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1428313237501} status=0 QTime=9 
+INFO  - 2015-04-06 17:40:41.539; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1428313241522} status=503 QTime=0 
+INFO  - 2015-04-06 17:40:41.541; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1428313241521} status=0 QTime=1 
+INFO  - 2015-04-06 17:40:41.549; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1428313241512} status=0 QTime=8 
+INFO  - 2015-04-06 17:40:41.552; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1428313241517} status=0 QTime=14 
+INFO  - 2015-04-06 17:43:38.765; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*:*&indent=true&start=1&rows=4000&wt=json&_=1428313418737} hits=7160 status=0 QTime=10 
+INFO  - 2015-04-06 17:44:45.335; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*:*&indent=true&fl=id,content&start=1&rows=4000&wt=json&_=1428313485295} hits=7160 status=0 QTime=10 
