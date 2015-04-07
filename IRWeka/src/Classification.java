@@ -1,21 +1,20 @@
 import weka.core.*;
-import weka.core.Attribute;
-import weka.core.DenseInstance;
-import weka.core.FastVector;
-import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.StringToWordVector;
 import weka.classifiers.Evaluation;
+
 import java.util.Random;
+
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.converters.ArffLoader.ArffReader;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.io.*;
 
 import weka.classifiers.bayes.NaiveBayes;
 
-public class SVM {
+public class Classification {
 
 	public static String trainingSet = "smsspam.small.arff";
 	public static String testSet = "smstest.txt";
@@ -24,28 +23,29 @@ public class SVM {
 
 	public static int fold = 10;
 
-	Instances trainData;
+	static Instances trainData;
 	StringToWordVector filter;
-	FilteredClassifier classifier;
+	static FilteredClassifier classifier;
 
 	public static String text;
-	Instances instances;
+	static Instances instances;
 
 	public static void main (String[] args) {
 
-		SVM svmClassification;
+		Classification svmClassification;
 
+		
 		System.out.println("Classification:\t\tSVM");
 		System.out.println("TrainingSet:\t\t" + trainingSet);
 		System.out.println("TrainedClassifier:\t" + trainedClassifier);
 		System.out.println("TestSet:\t\t" + testSet + "\n");
 
 		// Training Classifier
-		svmClassification = new SVM();
-		svmClassification.loadDataset(trainingSet);
-		svmClassification.evaluate();
+		svmClassification = new Classification();
+	/*	svmClassification.loadTrainingSet(trainingSet);
+		svmClassification.evaluateModel();
 		svmClassification.learn();
-		svmClassification.saveModel(trainedClassifier);
+		svmClassification.saveModel(trainedClassifier);*/
 
 		// Classifying with trainedClassifier
 /*		svmClassification.load(testSet);
@@ -53,26 +53,44 @@ public class SVM {
 		svmClassification.makeInstance();
 		svmClassification.classify();
 */		
-		svmClassification.loadModel(trainedClassifier);
+		//load classifier
+		svmClassification.loadModel(trainedClassifier);		
+		
+		//setup the attributes for the instance
+		// Create the attributes, class and text
+		FastVector fvNominalVal = new FastVector(2);
+		fvNominalVal.addElement("spam");
+		fvNominalVal.addElement("ham");
+		Attribute classAttr = new Attribute("class", fvNominalVal);
+		Attribute contentAttr = new Attribute("content",(FastVector) null);
+		// Create list of instances with one element
+		FastVector fvWekaAttributes = new FastVector(2);
+		fvWekaAttributes.addElement(classAttr);
+		fvWekaAttributes.addElement(contentAttr);
+		instances = new Instances(relationName, fvWekaAttributes, 1);
+		instances.setClassIndex(0);
+		
+		Instance current = new DenseInstance(2);
+		current.setDataset(instances);
 		// Multiple line classification
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(testSet));
 			String line;
 			text = "";
 			while ((line = reader.readLine()) != null) {
-				text = line;
-				svmClassification.makeInstance();
-				svmClassification.classify();
+				current.setValue(contentAttr, line);
+				double pred = classifier.classifyInstance(current);
+				System.out.println(instances.classAttribute().value((int) pred) + ",");
 				System.out.print(line + "\n");
 			}
 			reader.close();
 		}
-		catch (IOException e) {
-			System.out.println("Problem found when reading: " + testSet);
+		catch (Exception e) {
+			System.out.println("Problem found when reading: " + e);
 		}
 	}
 
-	public void loadDataset(String fileName) {
+	public void loadTrainingSet(String fileName) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(fileName));
 			ArffReader arff = new ArffReader(reader);
@@ -85,7 +103,7 @@ public class SVM {
 		}
 	}
 
-	public void evaluate() {
+	public void evaluateModel() {
 		try {
 			trainData.setClassIndex(0);
 			filter = new StringToWordVector();
@@ -165,39 +183,7 @@ public class SVM {
 		}
 	}
 
-	public void makeInstance() {
-		// Create the attributes, class and text
-		FastVector fvNominalVal = new FastVector(2);
-		fvNominalVal.addElement("spam");
-		fvNominalVal.addElement("ham");
-		Attribute attribute1 = new Attribute("class", fvNominalVal);
-		Attribute attribute2 = new Attribute("text",(FastVector) null);
-		// Create list of instances with one element
-		FastVector fvWekaAttributes = new FastVector(2);
-		fvWekaAttributes.addElement(attribute1);
-		fvWekaAttributes.addElement(attribute2);
-		instances = new Instances(relationName, fvWekaAttributes, 1);
-		// Set class index
-		instances.setClassIndex(0);
-		// Create and add the instance
-		DenseInstance instance = new DenseInstance(2);
-		instance.setValue(attribute2, text);
-		// Another way to do it:
-		// instance.setValue((Attribute)fvWekaAttributes.elementAt(1), text);
-		instances.add(instance);
-//		System.out.println("===== Instance created with reference dataset =====");
-//		System.out.println(instances);
-	}
 
-	public void classify() {
-		try {
-			double pred = classifier.classifyInstance(instances.instance(0));
-//			System.out.println("===== Classified instance =====");
-//			System.out.println("Class predicted: " + instances.classAttribute().value((int) pred));
-			System.out.print(instances.classAttribute().value((int) pred) + ",");
-		}
-		catch (Exception e) {
-			System.out.println("Problem found when classifying the text");
-		}
-	}
 }
+
+
