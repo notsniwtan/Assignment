@@ -150,7 +150,10 @@ public class ComparisonParser {
 					System.out.print(comparisonTable[i][j] + "\t\t");
 					bw.write(comparisonTable[i][j] + "\t\t\t");					
 				}
+				
 				System.out.print(comparisonTable[i][4] + "\t\t");
+				bw.write("\t" + comparisonTable[i][4] + "\t\t");
+				
 				if (i==0) {
 					System.out.print("\n" + CLASS_TWO + "\t\t");
 					bw.write("\n" + CLASS_TWO + "\t\t");
@@ -165,13 +168,39 @@ public class ComparisonParser {
 				}
 				else if (i==3) {
 					System.out.print("\nTotal" + "\t\t");
+					bw.write("\nTotal" + "\t\t");
 					for (int k=0 ; k < 4 ; k++) {
 						System.out.print(comparisonTable[4][k] + "\t\t");
+						bw.write(comparisonTable[4][k] + "\t\t\t");
 					}
-					System.out.print("\n");
+					System.out.print("\n\n");
 				}
 			}
+			
+			float C1 = comparisonTable[0][0];
+			float C2 = comparisonTable[1][1];
+			float C3 = comparisonTable[2][2];
+			float C4 = comparisonTable[3][3];
+			
+			float A1 = comparisonTable[4][0];
+			float A2 = comparisonTable[4][1];
+			float A3 = comparisonTable[4][2];
+			float A4 = comparisonTable[4][3];
 
+			float B1 = comparisonTable[0][4];
+			float B2 = comparisonTable[1][4];
+			float B3 = comparisonTable[2][4];
+			float B4 = comparisonTable[3][4];
+			
+			float pA = (C1 + C2 + C3 + C4)/lineCount;
+			float pE = ((A1 * B1 / lineCount) + (A2 * B2 / lineCount) + (A3 * B3 / lineCount) + (A4 * B4 / lineCount)) / lineCount;
+			
+			float kappa = (pA - pE) / (1 - pE);
+			
+			System.out.println("P(A) = " + pA);
+			System.out.println("P(E) = " + pE);
+			System.out.println("kappa = " + kappa);
+			
 			bw.close();
 
 		} catch (FileNotFoundException e) {
