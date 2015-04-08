@@ -46,7 +46,15 @@ Different: 194
 Different: 592
 
 Table		Politics	Economy		Social		Technology		Total
+<<<<<<< HEAD
 Politics	503			1			5			0			
 Economy		13			188			2			0			
 Social		18			5			196			0			
 Technology	0			1			1			67			
+=======
+Politics	421			37			51			1				510		
+Economy		57			123			20			5				205		
+Social		63			18			135			1				217		
+Technology	6			13			15			34				68		
+Total		547			191			221			41			
+>>>>>>> c141f70869cbb8388f3be6c2cebac97c5894f3f0
