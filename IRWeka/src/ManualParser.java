@@ -30,6 +30,7 @@ public class ManualParser {
 
 	public static String jsonComma = ",";
 	public static String jsonQuote = "'";
+	public static String jsonHTTP = "http";
 
 	public static void main(String[] args) {
 
@@ -72,10 +73,12 @@ public class ManualParser {
 				// Preprocessing for punctuation
 				contentStr = contentStr.replace(jsonComma, "");
 				contentStr = contentStr.replace(jsonQuote, "");
-				// Preprocessing for whitespace
-				contentStr = contentStr.trim();
 				// Preprocessing for content toLowerCase()
 				contentStr = contentStr.toLowerCase();
+				// Preprocessing for http
+				contentStr = contentStr.split(jsonHTTP, 2)[0];
+				// Preprocessing for whitespace
+				contentStr = contentStr.trim();
 				splitStr[2] = contentStr;
 
 				bw.write(splitStr[0] + "," + splitStr[1] + ",\'" + splitStr[2] + "\'\n");				
@@ -97,7 +100,7 @@ public class ManualParser {
 			}
 		}
 
-		System.out.println("Done");
+		System.out.println("[DEBUG] END OF RUN");
 	}
 
 }

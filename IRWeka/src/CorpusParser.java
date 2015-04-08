@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
 public class CorpusParser {
 
 	//public static String fileWritten = "fileWritten.txt";
-	public static String fileWritten = "testSet.arff";
+	//public static String fileWritten = "testSet.arff";
 
 	public static void main(String[] args) throws IOException, java.text.ParseException, org.json.simple.parser.ParseException{
 
