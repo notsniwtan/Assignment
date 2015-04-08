@@ -145,33 +145,30 @@ public class ComparisonParser {
 			for (int i=0 ; i < 4 ; i++) {
 				
 				for (int j=0 ; j < 4 ; j++) {
-					comparisonTable[i][j]
-					totalVertical = totalVertical + comparisonTable[i][j];
-					totalHorizontal[j] = totalHorizontal[j] + comparisonTable[i][j];
+					comparisonTable[i][4] +=  comparisonTable[i][j];
+					comparisonTable[4][j] +=  comparisonTable[i][j];
 					System.out.print(comparisonTable[i][j] + "\t\t");
 					bw.write(comparisonTable[i][j] + "\t\t\t");					
 				}
+				System.out.print(comparisonTable[i][4] + "\t\t");
 				if (i==0) {
-					System.out.print(totalVertical);
 					System.out.print("\n" + CLASS_TWO + "\t\t");
 					bw.write("\n" + CLASS_TWO + "\t\t");
 				}
 				else if (i==1) {
-					System.out.print(totalVertical);
 					System.out.print("\n" + CLASS_THREE + "\t\t");
 					bw.write("\n" + CLASS_THREE + "\t\t");
 				}
 				else if (i==2) {
-					System.out.print(totalVertical);
 					System.out.print("\n" + CLASS_FOUR + "\t");
 					bw.write("\n" + CLASS_FOUR + "\t");
 				}
 				else if (i==3) {
-					System.out.print(totalVertical);
 					System.out.print("\nTotal" + "\t\t");
 					for (int k=0 ; k < 4 ; k++) {
-						System.out.print(totalHorizontal[k] + "\t\t");
+						System.out.print(comparisonTable[4][k] + "\t\t");
 					}
+					System.out.print("\n");
 				}
 			}
 
@@ -191,6 +188,6 @@ public class ComparisonParser {
 			}
 		}
 
-		System.out.println("\n\n[DEBUG] END OF RUN");
+		System.out.println("\n[DEBUG] END OF RUN");
 	} 
 }
