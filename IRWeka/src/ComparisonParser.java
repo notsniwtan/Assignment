@@ -34,10 +34,10 @@ public class ComparisonParser {
 		int y = 0;
 		int lineCount = 0;
 
-		int comparisonTable[][] = new int[4][4];
+		int comparisonTable[][] = new int[5][5];
 
-		for (int i=0 ; i < 4 ; i++) {
-			for (int j=0 ; j < 4 ; j++) {
+		for (int i=0 ; i < 5 ; i++) {
+			for (int j=0 ; j < 5 ; j++) {
 				comparisonTable[i][j] = 0;
 			}
 		}
@@ -68,7 +68,7 @@ public class ComparisonParser {
 				compareTwo.add(lineSplit[0]);
 				countTwo++;
 			}
-			System.out.println("[DEBUG] CountTwo = " + countTwo);
+			System.out.println("[DEBUG] CountTwo = " + countTwo + "\n");
 
 			if (compareOne.size() != compareTwo.size()) {
 				System.out.println("[DEBUG] COMPARESIZE ERROR");
@@ -116,46 +116,62 @@ public class ComparisonParser {
 
 				if (x != y) {
 					System.out.println("[DEBUG] Different = " + lineCount);
-					bw.write(lineCount + 1 + "\n");
+					int lineDifferent = lineCount + 1;
+					bw.write("Different: " + lineDifferent + "\n");
 				}
 				lineCount++;
 			}
 
-			System.out.println("[DEBUG] lineCount = " + lineCount);
+			System.out.println("\n[DEBUG] lineCount = " + lineCount + "\n");
 
 			System.out.print("Table\t\t");
 			System.out.print(CLASS_ONE + "\t");
 			System.out.print(CLASS_TWO + "\t\t");
 			System.out.print(CLASS_THREE + "\t\t");
-			System.out.print(CLASS_FOUR + "\n");
+			System.out.print(CLASS_FOUR + "\t");
+			System.out.print("Total" + "\n");
 
 			System.out.print(CLASS_ONE + "\t");
 
-			bw.write("Table\t\t");
+			bw.write("\nTable\t\t");
 			bw.write(CLASS_ONE + "\t");
 			bw.write(CLASS_TWO + "\t\t");
 			bw.write(CLASS_THREE + "\t\t");
-			bw.write(CLASS_FOUR + "\n");
+			bw.write(CLASS_FOUR + "\t\t");
+			bw.write("Total" + "\n");
 
 			bw.write(CLASS_ONE + "\t");
 
 			for (int i=0 ; i < 4 ; i++) {
+				
 				for (int j=0 ; j < 4 ; j++) {
+					comparisonTable[i][j]
+					totalVertical = totalVertical + comparisonTable[i][j];
+					totalHorizontal[j] = totalHorizontal[j] + comparisonTable[i][j];
 					System.out.print(comparisonTable[i][j] + "\t\t");
-					bw.write(comparisonTable[i][j] + "\t\t");
+					bw.write(comparisonTable[i][j] + "\t\t\t");					
 				}
-				System.out.print("\n");
 				if (i==0) {
-					System.out.print(CLASS_TWO + "\t\t");
-					bw.write(CLASS_TWO + "\t\t");
+					System.out.print(totalVertical);
+					System.out.print("\n" + CLASS_TWO + "\t\t");
+					bw.write("\n" + CLASS_TWO + "\t\t");
 				}
 				else if (i==1) {
-					System.out.print(CLASS_THREE + "\t\t");
-					bw.write(CLASS_THREE + "\t\t");
+					System.out.print(totalVertical);
+					System.out.print("\n" + CLASS_THREE + "\t\t");
+					bw.write("\n" + CLASS_THREE + "\t\t");
 				}
 				else if (i==2) {
-					System.out.print(CLASS_FOUR + "\t");
-					bw.write(CLASS_FOUR + "\t");
+					System.out.print(totalVertical);
+					System.out.print("\n" + CLASS_FOUR + "\t");
+					bw.write("\n" + CLASS_FOUR + "\t");
+				}
+				else if (i==3) {
+					System.out.print(totalVertical);
+					System.out.print("\nTotal" + "\t\t");
+					for (int k=0 ; k < 4 ; k++) {
+						System.out.print(totalHorizontal[k] + "\t\t");
+					}
 				}
 			}
 
@@ -175,6 +191,6 @@ public class ComparisonParser {
 			}
 		}
 
-		System.out.println("[DEBUG] END OF RUN");
+		System.out.println("\n\n[DEBUG] END OF RUN");
 	} 
 }
