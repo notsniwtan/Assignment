@@ -7,23 +7,26 @@ import java.util.Random;
 
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.converters.ArffLoader.ArffReader;
+import weka.core.converters.CSVLoader;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.io.*;
 
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.MultilayerPerceptron;
 
 public class Classification {
 
-	public static String trainingSet = "smsspam.small.arff";
-	public static String testSet = "smstest.txt";
+	public static String trainingSet = "trainingset.arff";
+	public static String testSet = "testset.txt";
 	public static String trainedClassifier = "trainedClassifier.dat";
 	public static String relationName = "testRelation";
 
 	public static int fold = 10;
 
 	static Instances trainData;
+	static Instances testData;
 	StringToWordVector filter;
 	static FilteredClassifier classifier;
 
@@ -42,25 +45,28 @@ public class Classification {
 
 		// Training Classifier
 		svmClassification = new Classification();
-	/*	svmClassification.loadTrainingSet(trainingSet);
-		svmClassification.evaluateModel();
+		svmClassification.loadTrainingSet(trainingSet);
 		svmClassification.learn();
-		svmClassification.saveModel(trainedClassifier);*/
+		svmClassification.evaluateModel();
+	
+		//svmClassification.saveModel(trainedClassifier);
 
 		// Classifying with trainedClassifier
-/*		svmClassification.load(testSet);
-		svmClassification.loadModel(trainedClassifier);
+	//	svmClassification.load(testSet);
+/*		svmClassification.loadModel(trainedClassifier);
 		svmClassification.makeInstance();
 		svmClassification.classify();
 */		
 		//load classifier
-		svmClassification.loadModel(trainedClassifier);		
+	//	svmClassification.loadModel(trainedClassifier);		
 		
 		//setup the attributes for the instance
 		// Create the attributes, class and text
-		FastVector fvNominalVal = new FastVector(2);
-		fvNominalVal.addElement("spam");
-		fvNominalVal.addElement("ham");
+		/*FastVector fvNominalVal = new FastVector(2);
+		fvNominalVal.addElement("Technology");
+		fvNominalVal.addElement("Politics");
+		fvNominalVal.addElement("Economy");
+		fvNominalVal.addElement("Social");
 		Attribute classAttr = new Attribute("class", fvNominalVal);
 		Attribute contentAttr = new Attribute("content",(FastVector) null);
 		// Create list of instances with one element
@@ -87,7 +93,7 @@ public class Classification {
 		}
 		catch (Exception e) {
 			System.out.println("Problem found when reading: " + e);
-		}
+		}*/
 	}
 
 	public void loadTrainingSet(String fileName) {
@@ -99,7 +105,7 @@ public class Classification {
 			reader.close();
 		}
 		catch (IOException e) {
-			System.out.println("Problem found when reading: " + fileName);
+			System.out.println("Problem found when reading: " + e);
 		}
 	}
 
@@ -108,17 +114,18 @@ public class Classification {
 			trainData.setClassIndex(0);
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
-			classifier = new FilteredClassifier();
+			/*classifier = new FilteredClassifier();
 			classifier.setFilter(filter);
-			classifier.setClassifier(new NaiveBayes());
+			classifier.setClassifier(new NaiveBayes());*/
 			Evaluation eval = new Evaluation(trainData);
-			eval.crossValidateModel(classifier, trainData, fold, new Random(1));
+			eval.evaluateModel(classifier, trainData);
+			//eval.crossValidateModel(classifier, trainData, fold, new Random(1));
 			System.out.println(eval.toSummaryString());
 			System.out.println(eval.toClassDetailsString());
 			System.out.println("===== Evaluating on filtered (training) dataset done =====");
 		}
 		catch (Exception e) {
-			System.out.println("Problem found when evaluating");
+			System.out.println("Problem found when evaluating: "+e);
 		}
 	}
 
@@ -129,7 +136,7 @@ public class Classification {
 			filter.setAttributeIndices("last");
 			classifier = new FilteredClassifier();
 			classifier.setFilter(filter);
-			classifier.setClassifier(new NaiveBayes());
+			classifier.setClassifier(new MultilayerPerceptron());
 			classifier.buildClassifier(trainData);
 			// Uncomment to see the classifier
 			// System.out.println(classifier);
@@ -154,18 +161,22 @@ public class Classification {
 
 	public void load(String fileName) {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(fileName));
+			/*BufferedReader reader = new BufferedReader(new FileReader(fileName));
 			String line;
 			text = "";
 			while ((line = reader.readLine()) != null) {
 				text = text + " " + line;
-			}
+			}*/
+			//BufferedReader reader = new BufferedReader(new FileReader(fileName));
+			CSVLoader csv = new CSVLoader();
+			csv.setSource(new File(testSet));
+			testData = csv.getDataSet();
 			System.out.println("\n===== Loaded TestSet: " + fileName + " =====");
-			reader.close();
+			//reader.close();
 			System.out.println(text);
 		}
 		catch (IOException e) {
-			System.out.println("Problem found when reading: " + fileName);
+			System.out.println("Problem found when reading: " + e);
 		}
 	}
 
