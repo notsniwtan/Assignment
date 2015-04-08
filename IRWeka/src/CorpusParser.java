@@ -12,7 +12,8 @@ import org.json.simple.parser.JSONParser;
 
 public class CorpusParser {
 
-	public static String fileWritten = "fileWritten.txt";
+	//public static String fileWritten = "fileWritten.txt";
+	public static String fileWritten = "testSet.arff";
 
 	public static void main(String[] args) throws IOException, java.text.ParseException, org.json.simple.parser.ParseException{
 
@@ -37,13 +38,21 @@ public class CorpusParser {
 			String name = (String) jsonObject.get("Name");
 			JSONArray documentList = (JSONArray) jsonObject.get("Documents");
 
+			//
+			bw.write("@RELATION\ttestSet\n");
+			bw.write("@ATTRIBUTE\tclass\t\t{Politics,Economy,Social,Technology}\n");
+			bw.write("@ATTRIBUTE\tid\t\t\tNUMERIC\n");
+			bw.write("@ATTRIBUTE\tcontent\t\tSTRING\n\n");
+			bw.write("@DATA\n");
+			//
+
 			Iterator<JSONObject> iterator = documentList.iterator();
 
 			while(iterator.hasNext()){
 				JSONObject innerObj = (JSONObject) iterator.next();
 
 				String id = String.valueOf(innerObj.get("Id"));
-				
+
 				// Preprocess to remove
 				// (1) /n
 				// (2) /r
@@ -58,15 +67,17 @@ public class CorpusParser {
 				content = content.replace("'", "");
 				content = content.toLowerCase();
 				content = content.trim();
-				
+
 				System.out.println("id:" + id);
 				System.out.println("content:" + content);
 
+
+
 				bw.write(id + ",");
 				bw.write(content + "\n");
-				
+
 			}
-			
+
 			bw.close();
 
 		} catch (FileNotFoundException e) {
@@ -76,8 +87,8 @@ public class CorpusParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("[DEBUG] END OF RUN");
-		
+
 	}
 }
