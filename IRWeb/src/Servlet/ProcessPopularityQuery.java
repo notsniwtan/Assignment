@@ -26,6 +26,7 @@ public class ProcessPopularityQuery extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String queryString = (String) request.getAttribute("query");
 		String queryTypeString = (String) request.getAttribute("queryDisplayTarget");
+		String queryCountryString = (String) request.getAttribute("queryCountry");
 		
 		try {
 			//setup connection
@@ -38,6 +39,19 @@ public class ProcessPopularityQuery extends HttpServlet{
 			
 			//uses the /select request handler in solrconfig.xml
 			parameter.set("qt", "/favcount");
+			String fq = "country:\""+queryCountryString+"\"";
+			if (!(queryCountryString==(null)))
+			{
+			if (queryCountryString.equals("United States") ||
+					queryCountryString.equals("United Kingdom") ||
+					queryCountryString.equals("Ireland") || 
+					queryCountryString.equals("Deutschland") || 
+					queryCountryString.equals("France") ||
+					queryCountryString.equals("Schweiz") ||
+					queryCountryString.equals("Italia"))
+				parameter.set("fq", fq);
+			}
+			parameter.set("sort", "popcount desc");
 			//set to return relevancy score, use .score to retrieve value
 			parameter.setIncludeScore(true);
 			QueryResponse res = server.query(parameter);

@@ -21,7 +21,11 @@ public class ProcessQuery extends HttpServlet{
 	SolrServer server = null;
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String queryString = (String) request.getAttribute("query");
+		String querySearchString = (String) request.getAttribute("queryTypeString");
 		String queryTypeString = (String) request.getAttribute("queryDisplayTarget");
+		String queryCountryString = (String) request.getAttribute("queryCountry");
+		String querySortString = (String) request.getAttribute("querySort");
+		String queryNewString = queryString;
 		
 		try {
 			//setup connection
@@ -29,12 +33,50 @@ public class ProcessQuery extends HttpServlet{
 			
 			SolrQuery parameter = new SolrQuery();
 			
-			//sets the query string
-			parameter.set("q", queryString);
+			//Type Filter
+			if (querySearchString!=null)
+			{
+				switch(querySearchString)
+				{
+					case "author": queryNewString = "author:"+queryString;
+						break;
+					case "hashtag": queryNewString = "hashtag:"+queryString;
+						break;
+				}
+			}
+			//Sort Filter
+			if (querySortString!=null)
+			{
+				switch(querySortString)
+				{
+					case "popularity": parameter.set("sort", "popcount desc");
+						break;
+					case "date": parameter.set("sort", "date desc");
+						break;
+				}
+			}
 			
+			//Country Filter
+			String fq = "country:\""+queryCountryString+"\"";
+			if (!(queryCountryString==(null)))
+			{
+			if (queryCountryString.equals("United States") ||
+					queryCountryString.equals("United Kingdom") ||
+					queryCountryString.equals("Ireland") || 
+					queryCountryString.equals("Deutschland") || 
+					queryCountryString.equals("France") ||
+					queryCountryString.equals("Schweiz") ||
+					queryCountryString.equals("Italia"))
+				parameter.set("fq", fq);
+			}
+			//sets the query string
+			parameter.set("q", queryNewString);
+
 			//uses the /select request handler in solrconfig.xml
 			parameter.set("qt", "/select");
+			
 			//set to return relevancy score, use .score to retrieve value
+			
 			parameter.setIncludeScore(true);
 			QueryResponse res = server.query(parameter);
 			

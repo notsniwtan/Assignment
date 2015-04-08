@@ -26,14 +26,13 @@
 		<input type="submit" name="action" value="Search" />
 		<input type="submit" name="action" value="Index" />
 		<br>
-		Based On : &nbsp&nbsp&nbsp&nbsp   <select name="queryType">
+		Type &nbsp&nbsp&nbsp   <select name="queryType">
 		<option value="default" selected="selected">None</option>
 		<option value="image">Image</option>
-		<option value="popularity">Popularity</option>
-		<option value="geolocation">Geolocation</option>
-		<option value="date">Most Recent</option>
+		<option value="author">Author</option>
+		<option value="hashtag">#hashtag</option>
 		</select>
-		&nbsp&nbsp Country : &nbsp&nbsp   <select name="queryCountry">
+		&nbsp&nbsp Country &nbsp&nbsp   <select name="queryCountry">
 		<option value="default" selected="selected">None</option>
 		<option value="United States">United States</option>
 		<option value="United Kingdom">United Kingdom</option>
@@ -42,6 +41,11 @@
 		<option value="France">France</option>
 		<option value="Italia">Italy</option>
 		<option value="Schweiz">Switzerland</option>
+		</select>
+		&nbsp&nbsp Sort by &nbsp&nbsp   <select name="querySort">
+		<option value="default" selected="selected">None</option>
+		<option value="date">Newest</option>
+		<option value="popularity">Popular</option>
 		</select>
 	</form>
 </div>	

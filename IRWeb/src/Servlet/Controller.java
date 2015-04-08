@@ -22,29 +22,34 @@ public class Controller extends HttpServlet {
 			String queryString = request.getParameter("query");
 			String queryTypeString = request.getParameter("queryType");
 			String queryCountryString = request.getParameter("queryCountry");
+			String querySortString = request.getParameter("querySort");
 			String target = "";
 			String jspTarget = "";
 			
 			switch(queryTypeString){
+			case "author":
+			case "hashtag":
 			case "default": target = "/processquery";
 				jspTarget="resultSection.jsp";
 				break;
 			case "image": target = "/processimagequery";
 				jspTarget="resultImageSection.jsp";
 				break;
+				/*
 			case "popularity": target = "/processpopularityquery";
 				jspTarget="resultPopularitySection.jsp";
 				break;
-			case "geolocation": target = "/processgeolocationquery";
-				jspTarget="resultGeolocationSection.jsp";
-				request.setAttribute("queryCountry", queryCountryString);
+			case "geolocation":
 				break;
 			case "date": target = "/processdatequery";
 			jspTarget="resultSection.jsp";
-			break;
+			break;*/
 			}
 			
 			request.setAttribute("query", queryString);
+			request.setAttribute("queryTypeString", queryTypeString);
+			request.setAttribute("queryCountry", queryCountryString);
+			request.setAttribute("querySort", querySortString);
 			request.setAttribute("queryDisplayTarget", jspTarget);
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(target);
 			rd.forward(request, response);
