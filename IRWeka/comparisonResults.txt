@@ -1,0 +1,2 @@
+Table		Politics	Economy		Social		Technology
+Politics	510		0		0		0		Economy		0		205		0		0		Social		0		0		217		0		Technology	0		0		0		68		
