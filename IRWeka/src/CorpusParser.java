@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.Iterator;
 
 import org.json.simple.JSONArray;
@@ -45,10 +44,20 @@ public class CorpusParser {
 
 				String id = String.valueOf(innerObj.get("Id"));
 				
-				// Preprocess to remove /n /r
+				// Preprocess to remove
+				// (1) /n
+				// (2) /r
+				// (3) comma
+				// (4) singleQuote
+				// (5) whitespace
+				// (6) toLowerCase()
 				String content = (String) innerObj.get("Content");
 				content = content.replace("\n", "");
 				content = content.replace("\r", "");
+				content = content.replace(",", "");
+				content = content.replace("'", "");
+				content = content.toLowerCase();
+				content = content.trim();
 				
 				System.out.println("id:" + id);
 				System.out.println("content:" + content);
@@ -67,11 +76,8 @@ public class CorpusParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
-
-
-
-
+		
+		System.out.println("[DEBUG] END OF RUN");
+		
 	}
 }
