@@ -93,7 +93,9 @@ pageEncoding="ISO-8859-1"%>
 			<c:forEach items="${resultList}" var="document">
 				<tr>
 					<td width="1%" rowspan="2"><img width="43px" src="${document.authorProfilePic}"></td>	
-					<td align="left"><span style="font-weight:bold">${document.author}</span></td>			
+					<td align="left"><span style="font-weight:bold">${document.author}</span>
+					&nbsp &nbsp <img src="http://i27.photobucket.com/albums/c164/lene321/country${document.country}.png"> &nbsp &nbsp ${document.country}
+					</td>			
 				</tr>
 				<tr>
 					<td><span style="font-size:small">Tweeted at: ${document.date.date}/${document.date.month}/${document.date.year+1900}  
@@ -104,16 +106,9 @@ pageEncoding="ISO-8859-1"%>
 					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span></td>
 				</tr>
 				<tr>
-					<td id="bottom" colspan="2"><a id="a" href="${document.url}">${document.url}</a></td>
-				</tr>
-				<tr>
-					<td><span style="font-size:small">Favourites: ${document.favcount}
-					</span></td>
-				</tr>
-								<tr>
-					<td><span style="font-size:small">${document.retweetcount}
-					</span></td>
-				</tr>
+					<td id="bottom" colspan="2"><img src="http://i27.photobucket.com/albums/c164/lene321/favourite.png"> Favourites: ${document.favcount} &nbsp <img src="http://i27.photobucket.com/albums/c164/lene321/retweet.png"> Retweets: ${document.retweetcount}</br>
+					</br><a id="a" href="${document.url}">${document.url}</a>
+					</tr></td>				
 			</c:forEach>
 		</c:otherwise>
 		</c:choose>

@@ -814,9 +814,6 @@
        <int name="rows">100</int>
        <str name="df">content</str>
 	   <str name="omitHeader">true</str>
-	   <str name="qf">
-       favcount^10
-	   </str>
      </lst>
   </requestHandler>
   
