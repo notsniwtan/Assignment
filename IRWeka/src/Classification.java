@@ -14,12 +14,14 @@ import java.util.ArrayList;
 import java.io.*;
 
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.evaluation.output.prediction.PlainText;
 import weka.classifiers.functions.MultilayerPerceptron;
+import weka.classifiers.functions.SMO;
 
 public class Classification {
 
-	public static String trainingSet = "trainingset.arff";
-	public static String testSet = "testSet.arff";
+	public static String trainingSet = "TrainingSet.arff";
+	public static String testSet = "TestingSet.arff";
 	public static String trainedClassifier = "trainedClassifier.dat";
 	public static String relationName = "testRelation";
 
@@ -128,13 +130,18 @@ public class Classification {
 			testData.setClassIndex(0);
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
+			StringBuffer predsBuffer = new StringBuffer();
+			PlainText pt = new PlainText();
+			pt.setHeader(testData);
+			pt.setBuffer(predsBuffer);
 			/*classifier = new FilteredClassifier();
 			classifier.setFilter(filter);
 			classifier.setClassifier(new NaiveBayes());*/
 			Evaluation eval = new Evaluation(trainData);
-			eval.evaluateModel(classifier, testData);
+			eval.evaluateModel(classifier, testData,pt);
 			System.out.println(eval.toSummaryString());
 			System.out.println(eval.toClassDetailsString());
+			System.out.println(predsBuffer.toString());
 			System.out.println("===== Evaluating on filtered (training) dataset done =====");
 		}
 		catch (Exception e) {
@@ -146,11 +153,15 @@ public class Classification {
 		try {
 			trainData.setClassIndex(0);
 			filter = new StringToWordVector();
+			filter.setIDFTransform(true);
+			filter.setTFTransform(true);
+			filter.setStopwords(new File("stopwords.txt"));
 			filter.setAttributeIndices("last");
 			classifier = new FilteredClassifier();
 			classifier.setFilter(filter);
-			classifier.setClassifier(new MultilayerPerceptron());
-			//classifier.setClassifier(new NaiveBayes());
+			//classifier.setClassifier(new SMO());
+			//classifier.setClassifier(new MultilayerPerceptron());
+			classifier.setClassifier(new NaiveBayes());
 			classifier.buildClassifier(trainData);
 			// Uncomment to see the classifier
 			// System.out.println(classifier);

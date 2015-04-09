@@ -7,10 +7,13 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ManualClassificationToArffParser {
 
-	public static final String RELATION_NAME = "testSet";
+	public static final String RELATION_NAME = "TestingSet";
 
 	public static final String FILE_READ = "comparison1.txt";
 	public static final String FILE_WRITTEN = RELATION_NAME + ".arff";
@@ -38,7 +41,9 @@ public class ManualClassificationToArffParser {
 		BufferedReader br = null;
 		BufferedWriter bw = null;
 		String line = "";
-
+		
+		List duplicatesList = new ArrayList();
+		
 		try {
 
 			File file = new File(FILE_WRITTEN);
@@ -79,8 +84,21 @@ public class ManualClassificationToArffParser {
 				content = content.replace("'", "");				
 				content = content.toLowerCase();
 				content = content.replaceAll("http.*", "");
+				// Preprocessing for anything besides whitespace and alphabets
+				String pattern = "[^a-zA-Z\\s@]";
+				content = content.replaceAll(pattern, "");
+				// Preprocessing for @users
+				String userPattern = "@[a-zA-Z0-9]*";
+				content = content.replaceAll(userPattern, "");
 				content = content.trim();
 				
+				//detect duplicates
+				/*if(duplicatesList.contains(content)){
+					continue;
+				}
+				else{
+					duplicatesList.add(content);
+				}*/
 				splitStr[2] = content;
 
 				bw.write(splitStr[0] + "," + splitStr[1] + ",\'" + splitStr[2] + "\'\n");				

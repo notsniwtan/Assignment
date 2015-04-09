@@ -4,14 +4,13 @@ import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.File;
 
 public class JSONParser {
 	
-	public static String relationName = "training4000";
+	public static String relationName = "trainingSet";
 	
 	public static String fileRead = "sample4000.json";
 	public static String fileWritten = relationName + ".arff";
@@ -86,6 +85,14 @@ public class JSONParser {
 					// Preprocessing for json content tag
 					line = line.replace(jsonContent, "");
 					line = line.replace(jsonContentEnd, "");
+					// Preprocessing for @users
+					/*if(line.contains("@")){
+						line.indexOf("@")
+					}*/
+					// Preprocessing for anything besides whitespace and alphabets
+					String pattern = "[^a-zA-Z\\s]";
+					line = line.replaceAll(pattern, "");
+					//line = line.replace("-", "");
 					// Preprocessing for punctuation
 					line = line.replace(jsonComma, "");
 					line = line.replace(jsonQuote, "");
