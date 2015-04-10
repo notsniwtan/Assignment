@@ -64,7 +64,7 @@ public class ManualClassificationToArffParser {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
-
+			//Load the stopwords from stopwords.txt
 			Stopwords stopWords = new Stopwords();
 			System.out.println("stop words: "+stopWords);
 			stopWords.clear();
@@ -115,22 +115,25 @@ public class ManualClassificationToArffParser {
 				content = content.replaceAll(userPattern, "");
 				content = content.trim();
 				
-				
+				// Tokenize the content
 				WordTokenizer t = new WordTokenizer();
 				t.tokenize(content);
 				StringBuffer sb = new StringBuffer();
 				while(t.hasMoreElements()){
 					String s = (String) t.nextElement();
 					System.out.println(s);
+					//for each token, if its a key word, remove it from the content
 					if(stopWords.is(s)){
 						System.out.println("stop word: "+s);
 						continue;
 					}
 					System.out.println("before stem: "+s);
+					//stem the token
 					stem.setCurrent(s);
 					stem.stem();
 					s=stem.getCurrent();
 					System.out.println("after stem: "+s);
+					//append the tokens back into string
 					sb.append(s+ " ");
 				}
 				

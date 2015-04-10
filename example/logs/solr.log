@@ -8857,3 +8857,13 @@ INFO  - 2015-04-10 20:40:10.316; org.apache.solr.update.DirectUpdateHandler2; en
 INFO  - 2015-04-10 20:40:10.324; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={waitSearcher=true&commit=true&wt=javabin&version=2&softCommit=false} {commit=} 0 349
 INFO  - 2015-04-10 20:41:00.543; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=6 status=0 QTime=1 
 INFO  - 2015-04-10 20:42:57.374; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=6 status=0 QTime=0 
+INFO  - 2015-04-10 20:43:36.871; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1428669816868&wt=json} status=0 QTime=0 
+INFO  - 2015-04-10 20:43:36.891; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={_=1428669816889&wt=json} status=0 QTime=1 
+INFO  - 2015-04-10 20:43:38.402; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&_=1428669818400&contentType=text/html;charset%3Dutf-8} status=0 QTime=0 
+INFO  - 2015-04-10 20:43:38.403; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&_=1428669818401&contentType=text/html;charset%3Dutf-8} status=0 QTime=1 
+INFO  - 2015-04-10 20:43:38.413; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1428669818408&show=index&wt=json} status=0 QTime=0 
+INFO  - 2015-04-10 20:43:38.418; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={command=details&_=1428669818412&wt=json} status=0 QTime=4 
+INFO  - 2015-04-10 20:43:38.439; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&_=1428669818415&wt=json} status=503 QTime=0 
+INFO  - 2015-04-10 20:43:38.439; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1428669818414} status=0 QTime=0 
+INFO  - 2015-04-10 20:45:42.371; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1428669942365&wt=json} status=0 QTime=5 
+INFO  - 2015-04-10 20:45:42.384; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={_=1428669942379&wt=json} status=0 QTime=4 
