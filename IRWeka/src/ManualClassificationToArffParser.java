@@ -7,15 +7,27 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.File;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.lucene.analysis.PorterStemFilter;
+import org.apache.lucene.analysis.StopFilter;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.standard.StandardTokenizer;
+import org.tartarus.snowball.ext.porterStemmer;
+
+import weka.core.Stopwords;
+import weka.core.tokenizers.WordTokenizer;
+
 public class ManualClassificationToArffParser {
 
 	public static final String RELATION_NAME = "TestingSet";
+	//public static final String RELATION_NAME = "TrainingSet";
 
 	public static final String FILE_READ = "comparison1.txt";
+	//public static final String FILE_READ = "UnprocessedTrainingSet.txt";
 	public static final String FILE_WRITTEN = RELATION_NAME + ".arff";
 
 	public static final String CLASS_A = "Politics";
@@ -53,6 +65,17 @@ public class ManualClassificationToArffParser {
 				file.createNewFile();
 			}
 
+			Stopwords stopWords = new Stopwords();
+			System.out.println("stop words: "+stopWords);
+			stopWords.clear();
+			System.out.println("stop words: "+stopWords);
+			stopWords.read("stopwords.txt");
+			System.out.println("stop words: "+stopWords);
+		
+			
+			porterStemmer stem = new porterStemmer();
+			//stem.setStemmer("english");
+			
 			br = new BufferedReader(new FileReader(FILE_READ));
 			bw = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
 
@@ -78,7 +101,7 @@ public class ManualClassificationToArffParser {
 				// (5) toLowerCase()
 				// (6) http				
 				// (7) whitespace
-				content = content.replace("\n", "");
+				content = content.replace("\\n", " ");
 				content = content.replace("\r", "");
 				content = content.replace(",", "");
 				content = content.replace("'", "");				
@@ -92,13 +115,35 @@ public class ManualClassificationToArffParser {
 				content = content.replaceAll(userPattern, "");
 				content = content.trim();
 				
+				
+				WordTokenizer t = new WordTokenizer();
+				t.tokenize(content);
+				StringBuffer sb = new StringBuffer();
+				while(t.hasMoreElements()){
+					String s = (String) t.nextElement();
+					System.out.println(s);
+					if(stopWords.is(s)){
+						System.out.println("stop word: "+s);
+						continue;
+					}
+					System.out.println("before stem: "+s);
+					stem.setCurrent(s);
+					stem.stem();
+					s=stem.getCurrent();
+					System.out.println("after stem: "+s);
+					sb.append(s+ " ");
+				}
+				
+				content = sb.toString();
+				content = content.trim();
+				
 				//detect duplicates
-				/*if(duplicatesList.contains(content)){
+				if(duplicatesList.contains(content)){
 					continue;
 				}
 				else{
 					duplicatesList.add(content);
-				}*/
+				}
 				splitStr[2] = content;
 
 				bw.write(splitStr[0] + "," + splitStr[1] + ",\'" + splitStr[2] + "\'\n");				
@@ -109,6 +154,9 @@ public class ManualClassificationToArffParser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (br != null) {
@@ -122,5 +170,7 @@ public class ManualClassificationToArffParser {
 
 		System.out.println("[DEBUG] END OF RUN");
 	}
+	
+
 
 }

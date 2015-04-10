@@ -13,12 +13,14 @@ import org.apache.solr.client.solrj.impl.HttpSolrServer;
 public class Main extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//direct to home.jsp
+		System.out.println("HERE1");
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
 		rd.forward(req, resp);
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//direct to home.jsp
+		System.out.println("HERE1");
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
 		rd.forward(req, resp);
 	}

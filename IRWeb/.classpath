@@ -32,6 +32,9 @@
 	<classpathentry kind="lib" path="libs/slf4j-jdk14-1.5.5.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j.jar"/>
 	<classpathentry kind="lib" path="libs/solr-solrj-4.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/snowball.jar"/>
+	<classpathentry kind="lib" path="libs/weka-3.7.1-beta.jar"/>
+	<classpathentry kind="lib" path="libs/weka-dev-3.7.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Indexer/libs/solr-solrj-4.1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
