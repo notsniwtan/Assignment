@@ -9632,3 +9632,10 @@ INFO  - 2015-04-11 19:51:15.039; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-11 19:51:41.618; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=imf&wt=javabin&qt=/hashtag&version=2} hits=2 status=0 QTime=2 
 INFO  - 2015-04-11 19:51:56.083; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=teammqm&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=2 
 INFO  - 2015-04-11 19:52:07.093; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=mqm&wt=javabin&qt=/hashtag&version=2} hits=43 status=0 QTime=18 
+INFO  - 2015-04-11 21:24:45.733; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=war&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=2 
+INFO  - 2015-04-11 21:24:51.900; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=debt&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=1 
+INFO  - 2015-04-11 21:25:00.759; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=iran&wt=javabin&qt=/select&version=2} hits=186 status=0 QTime=1 
+INFO  - 2015-04-11 21:25:03.045; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=iran&wt=javabin&qt=/hashtag&version=2} hits=56 status=0 QTime=3 
+INFO  - 2015-04-11 21:29:00.422; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=6 status=0 QTime=1 
+INFO  - 2015-04-11 21:29:05.610; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=iran&wt=javabin&qt=/select&version=2} hits=186 status=0 QTime=1 
+INFO  - 2015-04-11 21:29:08.199; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=iran&wt=javabin&qt=/hashtag&version=2} hits=56 status=0 QTime=1 
