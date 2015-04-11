@@ -106,7 +106,7 @@ pageEncoding="ISO-8859-1"%>
 					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span></td>
 				</tr>
 				<tr>
-					<td id="bottom" colspan="2"><img src="http://i27.photobucket.com/albums/c164/lene321/favourite.png"> Favourites: ${document.favcount} &nbsp <img src="http://i27.photobucket.com/albums/c164/lene321/retweet.png"> Retweets: ${document.retweetcount}</br>
+					<td id="bottom" colspan="2"><img src="http://i27.photobucket.com/albums/c164/lene321/favourite.png"> Favourites: ${document.favcount} &nbsp <img src="http://i27.photobucket.com/albums/c164/lene321/retweet.png"> Retweets: ${document.retweetcount} &nbsp | &nbsp  <b><font color="green">${document.category}</font></b></br>
 					</br><a id="a" href="${document.url}">${document.url}</a>
 				</tr></td>	
 			</c:forEach>

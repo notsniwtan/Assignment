@@ -56,7 +56,7 @@ pageEncoding="ISO-8859-1"%>
     <script>
         $(document).ready(function(){
             $('#data').after('<div id="nav"></div>');
-            var rowsShown = 40;
+            var rowsShown = 61;
             var rowsTotal = $('#data tbody tr').length;
             var numPages = Math.round(rowsTotal/rowsShown);
             for(i = 0;i < numPages;i++) {
@@ -101,7 +101,7 @@ pageEncoding="ISO-8859-1"%>
 					</span></td>
 				</tr>
 				<tr>
-					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span></td>
+					<td colspan="2"><span style="font-size:x-large; font-weight:bold">${document.content}</span> - <font color="green">${document.category}</font></td>
 				</tr>
 				<tr>
 					<td colspan="2"><a id="a" href="${document.url}">${document.url}</a></td>
@@ -109,6 +109,7 @@ pageEncoding="ISO-8859-1"%>
 				<tr>
 					<td id="bottom" colspan="2"><img src="${document.image}"></td>
 				</tr>
+				<tr></tr>
 			</c:forEach>
 		</c:otherwise>
 		</c:choose>
