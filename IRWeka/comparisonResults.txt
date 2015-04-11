@@ -1,60 +1,110 @@
-Different: 7
-Different: 15
-Different: 18
-Different: 20
-Different: 22
-Different: 28
-Different: 32
-Different: 36
-Different: 37
-Different: 43
-Different: 44
-Different: 48
-Different: 49
-Different: 66
-Different: 72
-Different: 73
-Different: 81
-Different: 82
-Different: 84
-Different: 87
-Different: 88
-Different: 89
+Different: 1
+Different: 29
+Different: 33
+Different: 55
+Different: 56
+Different: 59
+Different: 61
+Different: 63
+Different: 80
+Different: 93
 Different: 95
-Different: 99
-Different: 104
-Different: 113
+Different: 96
+Different: 108
 Different: 119
 Different: 121
-Different: 124
-Different: 135
-Different: 137
-Different: 139
+Different: 127
+Different: 130
+Different: 131
+Different: 133
 Different: 141
-Different: 143
-Different: 144
+Different: 146
 Different: 149
-Different: 160
-Different: 161
-Different: 162
-Different: 164
-Different: 165
+Different: 153
+Different: 154
+Different: 157
+Different: 170
 Different: 183
-Different: 191
-Different: 192
-Different: 194
-Different: 592
+Different: 186
+Different: 193
+Different: 208
+Different: 227
+Different: 243
+Different: 276
+Different: 297
+Different: 327
+Different: 375
+Different: 406
+Different: 421
+Different: 446
+Different: 476
+Different: 506
+Different: 515
+Different: 516
+Different: 522
+Different: 547
+Different: 551
+Different: 553
+Different: 560
+Different: 574
+Different: 576
+Different: 582
+Different: 585
+Different: 607
+Different: 619
+Different: 642
+Different: 650
+Different: 660
+Different: 682
+Different: 690
+Different: 744
+Different: 749
+Different: 752
+Different: 759
+Different: 762
+Different: 767
+Different: 777
+Different: 786
+Different: 795
+Different: 805
+Different: 810
+Different: 828
+Different: 833
+Different: 840
+Different: 842
+Different: 845
+Different: 848
+Different: 855
+Different: 861
+Different: 865
+Different: 872
+Different: 876
+Different: 881
+Different: 887
+Different: 893
+Different: 901
+Different: 903
+Different: 908
+Different: 913
+Different: 918
+Different: 932
+Different: 938
+Different: 949
+Different: 964
+Different: 966
+Different: 973
+Different: 980
+Different: 989
+Different: 1000
+Different: 1003
+Different: 1012
+Different: 1014
+Different: 1020
+Different: 1023
 
 Table		Politics	Economy		Social		Technology		Total
-<<<<<<< HEAD
-Politics	503			1			5			0			
-Economy		13			188			2			0			
-Social		18			5			196			0			
-Technology	0			1			1			67			
-=======
-Politics	421			37			51			1				510		
-Economy		57			123			20			5				205		
-Social		63			18			135			1				217		
-Technology	6			13			15			34				68		
-Total		547			191			221			41			
->>>>>>> c141f70869cbb8388f3be6c2cebac97c5894f3f0
+Politics	338			11			25			14				388		
+Economy		6			214			11			7				238		
+Social		7			4			243			5				259		
+Technology	4			0			9			127				140		
+Total		355			229			288			153			

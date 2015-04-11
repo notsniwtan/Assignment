@@ -110,6 +110,7 @@ public class Classification {
 				
 				double pred = cls.classifyInstance(current);
 				System.out.println(instances.classAttribute().value((int) pred) + ",");
+		
 			//	System.out.print(line + "\n");
 			//}
 			//reader.close();
@@ -151,9 +152,9 @@ public class Classification {
 			testData.setClassIndex(0);
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
-			filter.setDoNotOperateOnPerClassBasis(true);
+			/*filter.setDoNotOperateOnPerClassBasis(true);
 			filter.setIDFTransform(true);
-			filter.setTFTransform(true);
+			filter.setTFTransform(true);*/
 			StringBuffer predsBuffer = new StringBuffer();
 			PlainText pt = new PlainText();
 			pt.setHeader(trainData);
@@ -168,8 +169,8 @@ public class Classification {
 			classifier.setDebug(true);
 		//	classifier.setClassifier(new PART());
 		//	classifier.setClassifier(new J48());
-		//	classifier.setClassifier(new NaiveBayes());
-			classifier.setClassifier(new NaiveBayesMultinomial());
+			classifier.setClassifier(new NaiveBayes());
+		//	classifier.setClassifier(new NaiveBayesMultinomial());
 			classifier.setFilter(filter);
 			classifier.buildClassifier(trainData);
 			System.out.println("done");
@@ -183,7 +184,8 @@ public class Classification {
 			svm.setC(1); svm.setKernel(pk);
 			c2.setClassifier(svm);
 			c2.setFilter(f2);
-			//c2.buildClassifier(trainData);
+			
+			c2.buildClassifier(trainData);
 			
 			adaBoost = new AdaBoostM1();
 			adaBoost.setClassifier(c2);
@@ -208,11 +210,15 @@ public class Classification {
 			v.buildClassifier(trainData);*/
 			
 			Evaluation eval = new Evaluation(trainData);
+			long time = System.currentTimeMillis();
 			eval.evaluateModel(adaBoost, testData,pt);
+			time = System.currentTimeMillis()-time;
+			
 			//eval.crossValidateModel(v, trainData, 3, new Random(9), pt);
 			System.out.println(eval.toSummaryString());
 			System.out.println(eval.toClassDetailsString());
-			//System.out.println(predsBuffer.toString());
+			System.out.println("Time taken: "+time);
+			System.out.println(predsBuffer.toString());
 			System.out.println("===== Evaluating on filtered (training) dataset done =====");
 		}
 		catch (Exception e) {
