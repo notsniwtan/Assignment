@@ -9595,3 +9595,40 @@ INFO  - 2015-04-11 19:22:14.927; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-11 19:22:32.820; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
 INFO  - 2015-04-11 19:22:39.001; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
 INFO  - 2015-04-11 19:33:57.855; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=union&wt=javabin&qt=/select&version=2} hits=11884 status=0 QTime=10 
+INFO  - 2015-04-11 19:40:49.325; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=obama&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=28 
+INFO  - 2015-04-11 19:40:55.651; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=obama&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=1 
+INFO  - 2015-04-11 19:41:03.526; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=yemen&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=3 
+INFO  - 2015-04-11 19:41:17.245; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=war&wt=javabin&qt=/select&version=2} hits=156 status=0 QTime=1 
+INFO  - 2015-04-11 19:41:20.345; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=war&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=2 
+INFO  - 2015-04-11 19:41:38.617; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=king&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-11 19:41:45.177; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=president&wt=javabin&qt=/hashtag&version=2} hits=4 status=0 QTime=2 
+INFO  - 2015-04-11 19:43:34.115; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=isis&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-11 19:43:37.838; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=islam&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-11 19:43:50.325; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=fight&wt=javabin&qt=/hashtag&version=2} hits=5 status=0 QTime=1 
+INFO  - 2015-04-11 19:44:07.890; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=bomb&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-11 19:44:12.150; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=hostage&wt=javabin&qt=/hashtag&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-11 19:44:25.875; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=obama&wt=javabin&qt=/select&version=2} hits=29 status=0 QTime=1 
+INFO  - 2015-04-11 19:44:29.955; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=obama&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=1 
+INFO  - 2015-04-11 19:44:38.115; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=yemen&wt=javabin&qt=/select&version=2} hits=52 status=0 QTime=1 
+INFO  - 2015-04-11 19:44:40.885; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=yemen&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=1 
+INFO  - 2015-04-11 19:48:59.462; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
+INFO  - 2015-04-11 19:49:14.461; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=eulaw&wt=javabin&qt=/select&version=2} hits=21 status=0 QTime=12 
+INFO  - 2015-04-11 19:49:17.345; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=eulaw&wt=javabin&qt=/hashtag&version=2} hits=19 status=0 QTime=3 
+INFO  - 2015-04-11 19:49:35.135; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=eu+law&wt=javabin&qt=/select&version=2} hits=4313 status=0 QTime=5 
+INFO  - 2015-04-11 19:49:38.006; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=eu+law&wt=javabin&qt=/hashtag&version=2} hits=228 status=0 QTime=5 
+INFO  - 2015-04-11 19:50:00.252; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=law&wt=javabin&qt=/select&version=2} hits=250 status=0 QTime=1 
+INFO  - 2015-04-11 19:50:03.246; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=law&wt=javabin&qt=/hashtag&version=2} hits=30 status=0 QTime=2 
+INFO  - 2015-04-11 19:50:28.573; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1428753028552&wt=json} status=0 QTime=2 
+INFO  - 2015-04-11 19:50:28.604; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={_=1428753028585&wt=json} status=0 QTime=3 
+INFO  - 2015-04-11 19:50:29.567; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&_=1428753029553&contentType=text/html;charset%3Dutf-8} status=0 QTime=2 
+INFO  - 2015-04-11 19:50:29.567; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&_=1428753029553&contentType=text/html;charset%3Dutf-8} status=0 QTime=2 
+INFO  - 2015-04-11 19:50:29.608; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1428753029585} status=0 QTime=1 
+INFO  - 2015-04-11 19:50:29.612; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={command=details&_=1428753029583&wt=json} status=0 QTime=9 
+INFO  - 2015-04-11 19:50:29.613; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&_=1428753029586&wt=json} status=503 QTime=3 
+INFO  - 2015-04-11 19:50:29.612; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&_=1428753029580&show=index&wt=json} status=0 QTime=9 
+INFO  - 2015-04-11 19:50:41.882; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=hasImage:true&_=1428753041868&wt=xml} hits=1677 status=0 QTime=1 
+INFO  - 2015-04-11 19:51:04.562; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=rugby&wt=javabin&qt=/hashtag&version=2} hits=64 status=0 QTime=21 
+INFO  - 2015-04-11 19:51:15.039; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=rugbyunion&wt=javabin&qt=/hashtag&version=2} hits=2 status=0 QTime=2 
+INFO  - 2015-04-11 19:51:41.618; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=imf&wt=javabin&qt=/hashtag&version=2} hits=2 status=0 QTime=2 
+INFO  - 2015-04-11 19:51:56.083; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=teammqm&wt=javabin&qt=/hashtag&version=2} hits=1 status=0 QTime=2 
+INFO  - 2015-04-11 19:52:07.093; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=mqm&wt=javabin&qt=/hashtag&version=2} hits=43 status=0 QTime=18 
