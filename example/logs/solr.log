@@ -9594,3 +9594,4 @@ INFO  - 2015-04-11 19:21:42.541; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-11 19:22:14.927; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
 INFO  - 2015-04-11 19:22:32.820; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
 INFO  - 2015-04-11 19:22:39.001; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=t*&wt=javabin&qt=/hashtag&version=2} hits=202 status=0 QTime=1 
+INFO  - 2015-04-11 19:33:57.855; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=union&wt=javabin&qt=/select&version=2} hits=11884 status=0 QTime=10 
