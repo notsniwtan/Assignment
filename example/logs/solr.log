@@ -9639,3 +9639,19 @@ INFO  - 2015-04-11 21:25:03.045; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-11 21:29:00.422; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=test&wt=javabin&qt=/select&version=2} hits=6 status=0 QTime=1 
 INFO  - 2015-04-11 21:29:05.610; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={fl=*,score&q=iran&wt=javabin&qt=/select&version=2} hits=186 status=0 QTime=1 
 INFO  - 2015-04-11 21:29:08.199; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/hashtag params={fl=*,score&q=iran&wt=javabin&qt=/hashtag&version=2} hits=56 status=0 QTime=1 
+INFO  - 2015-04-11 21:48:18.547; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2015-04-11 21:48:18.548; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/Users/Notsniw/Desktop/Workspace/Assignment/example/solr-webapp/webapp/},C:\Users\Notsniw\Desktop\Workspace\Assignment\example/webapps/solr.war
+INFO  - 2015-04-11 21:48:19.548; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=328700259
+INFO  - 2015-04-11 21:48:19.551; org.apache.solr.core.SolrCore; [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@54c59ad
+INFO  - 2015-04-11 21:48:19.556; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+INFO  - 2015-04-11 21:48:19.556; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2015-04-11 21:48:19.557; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2015-04-11 21:48:19.557; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2015-04-11 21:48:19.558; org.apache.solr.core.SolrCore; [collection1] Closing main searcher on request.
+INFO  - 2015-04-11 21:48:19.561; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2015-04-11 21:48:19.562; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index [CachedDir<<refCount=0;path=C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index;done=false>>]
+INFO  - 2015-04-11 21:48:19.563; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data\index
+INFO  - 2015-04-11 21:48:19.563; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data [CachedDir<<refCount=0;path=C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data;done=false>>]
+INFO  - 2015-04-11 21:48:19.563; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\Users\Notsniw\Desktop\Workspace\Assignment\example\solr\collection1\data
+INFO  - 2015-04-11 21:48:19.565; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/Users/Notsniw/Desktop/Workspace/Assignment/example/solr-webapp/webapp/},C:\Users\Notsniw\Desktop\Workspace\Assignment\example/webapps/solr.war
+INFO  - 2015-04-11 21:48:19.618; org.eclipse.jetty.util.thread.ShutdownThread; shutdown already commenced
