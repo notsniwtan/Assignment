@@ -832,7 +832,7 @@
       -->
      <lst name="defaults">
        <str name="echoParams">explicit</str>
-       <int name="rows">100</int>
+       <int name="rows">1000000</int>
        <str name="df">content</str>
 	   <str name="omitHeader">true</str>
      </lst>
