@@ -9848,3 +9848,60 @@ INFO  - 2015-04-12 15:06:32.916; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2015-04-12 15:12:46.467; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=asdasdasdas&qt=/select&fl=*,score&sort=date+desc&wt=javabin&version=2} hits=0 status=0 QTime=1 
 INFO  - 2015-04-12 15:21:07.789; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=singapore&qt=/select&fl=*,score&wt=javabin&version=2} hits=2 status=0 QTime=0 
 INFO  - 2015-04-12 15:21:12.541; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=europe&qt=/select&fl=*,score&wt=javabin&version=2} hits=1065 status=0 QTime=1 
+INFO  - 2015-04-12 15:49:13.851; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=schema.xml&contentType=text/xml;charset%3Dutf-8&_=1428824953817} status=0 QTime=1 
+INFO  - 2015-04-12 15:49:15.682; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=schema.xml&contentType=text/xml;charset%3Dutf-8&_=1428824955649} status=0 QTime=0 
+INFO  - 2015-04-12 15:49:16.986; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824956893} status=0 QTime=66 
+INFO  - 2015-04-12 15:49:17.011; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824956984} status=0 QTime=13 
+INFO  - 2015-04-12 15:49:27.455; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824967411} status=0 QTime=12 
+INFO  - 2015-04-12 15:49:27.478; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824967456} status=0 QTime=10 
+INFO  - 2015-04-12 15:49:29.762; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824969721} status=0 QTime=9 
+INFO  - 2015-04-12 15:49:29.782; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824969762} status=0 QTime=8 
+INFO  - 2015-04-12 15:49:31.272; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824971238} status=0 QTime=8 
+INFO  - 2015-04-12 15:49:31.283; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824971266} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:32.938; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824972907} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:32.949; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824972932} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:36.128; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824976090} status=0 QTime=9 
+INFO  - 2015-04-12 15:49:36.139; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824976121} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:40.018; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824980001} status=0 QTime=8 
+INFO  - 2015-04-12 15:49:40.031; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824980014} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:42.020; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824981989} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:42.030; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824982014} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:43.323; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824983286} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:43.333; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824983317} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:45.182; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1428824985145} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:45.192; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1428824985175} status=0 QTime=7 
+INFO  - 2015-04-12 15:49:56.748; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="European+Union"&qt=/select&fl=*,score&wt=javabin&version=2} hits=11148 status=0 QTime=91 
+INFO  - 2015-04-12 15:51:06.146; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=european+or+union&qt=/select&fl=*,score&wt=javabin&version=2} hits=13886 status=0 QTime=21 
+INFO  - 2015-04-12 15:51:08.943; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=european+and+union&qt=/select&fl=*,score&wt=javabin&version=2} hits=13886 status=0 QTime=2 
+INFO  - 2015-04-12 15:51:10.941; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=european+ANDunion&qt=/select&fl=*,score&wt=javabin&version=2} hits=13834 status=0 QTime=7 
+INFO  - 2015-04-12 15:51:12.893; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=european+AND+union&qt=/select&fl=*,score&wt=javabin&version=2} hits=11832 status=0 QTime=30 
+INFO  - 2015-04-12 15:51:23.383; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=fast+AND+facts&qt=/select&fl=*,score&wt=javabin&version=2} hits=64 status=0 QTime=1 
+INFO  - 2015-04-12 15:51:28.680; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=germany+and+greece&qt=/select&fl=*,score&wt=javabin&version=2} hits=388 status=0 QTime=8 
+INFO  - 2015-04-12 15:51:36.697; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=OBAMA+AND+USA&qt=/select&fl=*,score&wt=javabin&version=2} hits=0 status=0 QTime=2 
+INFO  - 2015-04-12 15:51:42.064; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=obama+AND+usa&qt=/select&fl=*,score&wt=javabin&version=2} hits=0 status=0 QTime=1 
+INFO  - 2015-04-12 15:51:44.903; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=obama&qt=/select&fl=*,score&wt=javabin&version=2} hits=29 status=0 QTime=0 
+INFO  - 2015-04-12 15:51:50.085; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=obama+and+us&qt=/select&fl=*,score&wt=javabin&version=2} hits=262 status=0 QTime=3 
+INFO  - 2015-04-12 15:52:08.097; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"america"&qt=/select&fl=*,score&wt=javabin&version=2} hits=1 status=0 QTime=1 
+INFO  - 2015-04-12 15:52:16.257; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=2 
+INFO  - 2015-04-12 15:52:20.873; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=0 
+INFO  - 2015-04-12 15:52:54.561; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:52:55.588; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=0 
+INFO  - 2015-04-12 15:52:58.125; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=&qt=/select&fl=*,score&wt=javabin&version=2} hits=0 status=0 QTime=0 
+INFO  - 2015-04-12 15:52:59.395; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=&qt=/select&fl=*,score&wt=javabin&version=2} hits=0 status=0 QTime=0 
+INFO  - 2015-04-12 15:53:02.323; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:53:03.788; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:53:04.996; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:53:06.299; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=0 
+INFO  - 2015-04-12 15:53:07.430; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=2 
+INFO  - 2015-04-12 15:53:08.688; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:53:09.851; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:53:11.410; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q="obama"+AND+"us"&qt=/select&fl=*,score&wt=javabin&version=2} hits=4 status=0 QTime=2 
+INFO  - 2015-04-12 15:55:08.397; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"United+States"&wt=javabin&version=2} hits=38 status=0 QTime=1 
+INFO  - 2015-04-12 15:55:10.440; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"United+Kingdom"&wt=javabin&version=2} hits=51 status=0 QTime=1 
+INFO  - 2015-04-12 15:55:15.818; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"France"&wt=javabin&version=2} hits=4 status=0 QTime=20 
+INFO  - 2015-04-12 15:55:21.130; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"United+States"&wt=javabin&version=2} hits=38 status=0 QTime=0 
+INFO  - 2015-04-12 15:55:23.639; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"Deutschland"&wt=javabin&version=2} hits=4 status=0 QTime=0 
+INFO  - 2015-04-12 15:55:25.894; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"Ireland"&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:55:28.406; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"Italia"&wt=javabin&version=2} hits=3 status=0 QTime=0 
+INFO  - 2015-04-12 15:55:30.662; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"Schweiz"&wt=javabin&version=2} hits=4 status=0 QTime=1 
+INFO  - 2015-04-12 15:55:34.969; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*&qt=/select&fl=*,score&fq=country:"United+States"&wt=javabin&version=2} hits=38 status=0 QTime=1 
