@@ -75,9 +75,6 @@ public class Main {
 	static AdaBoostM1 adaBoost;
 	static Instances instances;
 
-	
-	
-	
 	//static IndexWriter indexWriter = null;
 	public static void main(String[] args) throws SolrServerException, IOException, java.text.ParseException{
 		createIndex();
